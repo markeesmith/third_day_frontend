@@ -24,6 +24,8 @@ Router.events.on('routeChangeError', handleRouteChangeError);
 const Logo = styled.h1`
     font-size: 3rem;
     margin-left: 2rem;
+    margin-top: 0;
+    margin-bottom: 0;
     position: relative;
     z-index: 2;
     a {
@@ -39,7 +41,7 @@ const Logo = styled.h1`
 
 const StyledHeader = styled.header`
     .bar {
-        border-bottom: 10px solid black;
+        border-bottom: 5px solid black;
         display: grid;
         grid-template-columns: auto 1fr;
         justify-content: space-between;
@@ -56,12 +58,20 @@ const StyledHeader = styled.header`
     }
 `;
 
+const StyledLogo = styled.img`
+    margin-top: 1.5rem;
+    max-height: 7rem;
+    @media (min-width: 1300px) {
+        max-height: 5rem;
+    }
+`;
+
 const Header = () => (
     <StyledHeader>
         <div className="bar">
             <Logo>
                 <Link href="/">
-                    <a>Third Day</a>
+                    <StyledLogo src="/static/MainLogo.svg" />
                 </Link>
             </Logo>
             <Nav />
