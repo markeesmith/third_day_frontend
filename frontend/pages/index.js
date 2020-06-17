@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const Home = props => (
+const Home = () => (
     <div>
         <h1>Home Page</h1>
     </div>

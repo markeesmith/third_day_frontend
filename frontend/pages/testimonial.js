@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const Testimonial = props => (
+const Testimonial = () => (
     <div>
         <h1>Testimonial Page</h1>
     </div>

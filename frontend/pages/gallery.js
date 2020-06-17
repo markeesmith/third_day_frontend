@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const Gallery = props => (
+const Gallery = () => (
     <div>
         <h1>Gallery Page</h1>
     </div>
