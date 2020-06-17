@@ -1,0 +1,21 @@
+{
+  "name": "thirdday_frontend",
+  "version": "1.0.0",
+  "description": "Rewrite for the Third Day Builders website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next -p 8000",
+    "build": "next build",
+    "start": "npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Markee Smith",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^9.4.4",
+    "nprogress": "^0.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
+  }
+}
