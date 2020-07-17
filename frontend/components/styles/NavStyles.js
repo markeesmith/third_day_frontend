@@ -26,11 +26,11 @@ const NavStyles = styled.ul`
     &:before {
       content: '';
       width: 2px;
-      background: lightgrey;
+      background: #501414;
       height: 100%;
       left: 0;
       position: absolute;
-      /*transform: skew(-20deg);*/
+      transform: skew(-20deg);
       top: 0;
       bottom: 0;
     }
@@ -58,7 +58,8 @@ const NavStyles = styled.ul`
     }
   }
   @media (max-width: 1300px) {
-    border-top: 1px solid lightgrey;
+    /*border-top: 1px solid lightgrey;*/
+    border-top: 1px solid #501414;
     width: 100%;
     justify-content: center;
     font-size: 1.5rem;
