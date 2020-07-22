@@ -7,7 +7,7 @@
     "dev": "next -p 8000",
     "build": "next build",
     "start": "npm start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Markee Smith",
   "license": "MIT",
@@ -17,5 +17,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "jest": "^26.1.0"
   }
 }
