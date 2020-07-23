@@ -1,4 +1,4 @@
-const s3 = require('../aws/s3');
+const s3 = require('../db/s3');
 
 test('configureBucket sets AWS S3 "Bucket" param correctly', () => {
     expect(s3.getBucket()).toBe(s3.configureBucket("thirdday"));
