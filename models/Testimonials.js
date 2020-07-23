@@ -1,16 +1,16 @@
-const Sequelize = require('sequelize');
+const { DataTypes } = require('sequelize');
 const db        = require('../lib/db');
 
 const Testimonials = db.define('Testimonials', {
     TestimonialId: {
-        type: Sequelize.INTEGER,
+        type: DataTypes.INTEGER,
         primaryKey: true
     },
     CustomerId: {
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
     },
     Text: {
-        type: Sequelize.STRING
+        type: DataTypes.TEXT
     }
 });
 

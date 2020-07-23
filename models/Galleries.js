@@ -1,19 +1,19 @@
-const Sequelize = require('sequelize');
+const { DataTypes } = require('sequelize');
 const db        = require('../lib/db');
 
 const Galleries = db.define('Galleries', {
     GalleryId: {
-        type: Sequelize.INTEGER,
+        type: DataTypes.INTEGER,
         primaryKey: true
     },
     GalleryType: {
-        type: Sequelize.STRING
+        type: DataTypes.TEXT
     },
     GalleryNumItems: {
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
     },
     GalleryPath: {
-        type: Sequelize.STRING
+        type: DataTypes.TEXT
     }
 });
 

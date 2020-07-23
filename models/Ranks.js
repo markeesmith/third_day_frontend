@@ -1,13 +1,13 @@
-const Sequelize = require('sequelize');
+const { DataTypes } = require('sequelize');
 const db        = require('../lib/db');
 
 const Ranks = db.define('Ranks', {
     RankId: {
-        type: Sequelize.INTEGER,
+        type: DataTypes.INTEGER,
         primaryKey: true
     },
     GalleryId: {
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
     }
 });
 
