@@ -1,6 +1,5 @@
 // Load the SDK and UUID
 const AWS  = require('aws-sdk');
-const uuid = require('uuid');
 var s3Obj = [];
 
 // S3 Parameters and Base Access
