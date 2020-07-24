@@ -4,7 +4,8 @@ const db        = require('../lib/db');
 const Ranks = db.define('Ranks', {
     RankId: {
         type: DataTypes.INTEGER,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
     },
     GalleryId: {
         type: DataTypes.INTEGER

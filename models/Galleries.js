@@ -4,7 +4,8 @@ const db        = require('../lib/db');
 const Galleries = db.define('Galleries', {
     GalleryId: {
         type: DataTypes.INTEGER,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
     },
     GalleryType: {
         type: DataTypes.TEXT

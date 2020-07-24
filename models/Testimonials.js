@@ -4,12 +4,16 @@ const db        = require('../lib/db');
 const Testimonials = db.define('Testimonials', {
     TestimonialId: {
         type: DataTypes.INTEGER,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
     },
     CustomerId: {
         type: DataTypes.INTEGER
     },
-    Text: {
+    Body: {
+        type: DataTypes.TEXT
+    },
+    Headline: {
         type: DataTypes.TEXT
     }
 });

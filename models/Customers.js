@@ -4,7 +4,8 @@ const db        = require('../lib/db');
 const Customers = db.define('Customers', {
     CustomerId: {
         type: DataTypes.INTEGER,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
     },
     FirstName: {
         type: DataTypes.TEXT
