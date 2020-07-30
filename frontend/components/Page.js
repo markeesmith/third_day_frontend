@@ -4,18 +4,18 @@ import Header from '../components/Header';
 import Meta from '../components/Meta'
 
 const theme = {
-    maxWidth: '1000px',
+    // maxWidth: '1000px',
 };
 
 const StyledPage = styled.div`
-    background: white;
-    color: black;
+    /* background: white;
+    color: black; */
 `;
 
 const Inner = styled.div`
-    max-width: ${ props => props.theme.maxWidth };
+    /* max-width: ${ props => props.theme.maxWidth };
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2rem; */
 `;
 
 class Page extends Component {

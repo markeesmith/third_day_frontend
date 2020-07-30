@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import Page from '../components/Page';
 
 const GlobalStyle = createGlobalStyle`
-    html {
+    /* html {
         box-sizing: border-box;
         font-size: 10px;
     }
@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: none;
         color: black;
-    }
+    } */
 `;
 
 class MyApp extends App {
