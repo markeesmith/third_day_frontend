@@ -3,9 +3,23 @@ import { createGlobalStyle } from 'styled-components';
 import Page from '../components/Page';
 
 const GlobalStyle = createGlobalStyle`
-    /* html {
+    html {
+        @font-face {
+            font-family: 'FuturaPT-Light';
+            src: url('../static/fonts/FuturaPT-Light.eot');
+            src: url('../static/fonts/FuturaPT-Light.eot?#iefix') format('embedded-opentype'),
+                url('../static/fonts/FuturaPT-Light.svg#FuturaPT-Light') format('svg'),
+                url('../static/fonts/FuturaPT-Light.ttf') format('truetype'),
+                url('../static/fonts/FuturaPT-Light.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
         box-sizing: border-box;
         font-size: 10px;
+        padding: 0;
+        margin: 0;
+        background-color: #FFFAFA;
+        background-color: black;
     }
     *, *:before, *:after {
         box-sizing: inherit;
@@ -18,8 +32,7 @@ const GlobalStyle = createGlobalStyle`
     }
     a {
         text-decoration: none;
-        color: black;
-    } */
+    }
 `;
 
 class MyApp extends App {

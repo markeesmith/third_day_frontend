@@ -20,22 +20,8 @@ Router.events.on('routeChangeStart', handleStartRouteChange);
 Router.events.on('routeChangeComplete', handleCompleteRouteChange);
 Router.events.on('routeChangeError', handleRouteChangeError);
 
-const StyledLogo = styled.img`
-    margin-top: 1.5rem;
-    max-height: 6rem;
-`;
-
 const Header = () => (
-    <div>
-        <div className="bar">
-            <div>
-                <Link href="/">
-                    <StyledLogo src="/static/MainLogo.svg" />
-                </Link>
-            </div>
-            <Nav />
-        </div>
-    </div>
+    <Nav />
 )
 
 export default Header;
