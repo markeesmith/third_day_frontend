@@ -30,14 +30,14 @@ class Nav extends Component {
             bar.style.backgroundColor = 'white';
             bar.style.height = '15vh';
             bar.style.paddingTop = '0';
-            bar.style.transition = 'height 1.5s';
+            bar.style.transition = 'height .5s';
             link.forEach(l => l.style.color = '#501414');
             logo.src = 'static/logos/MainLogoMaroon.svg'
         } else {
             bar.style.backgroundColor = 'transparent';
             bar.style.height = '20vh';
             bar.style.paddingTop = '5vh';
-            bar.style.transition = 'height 1.5s';
+            bar.style.transition = 'height .5s';
             link.forEach(l => l.style.color = 'white');
             logo.src = 'static/logos/MainLogoWhite.svg'
         }
@@ -45,7 +45,7 @@ class Nav extends Component {
 
     render() {
         return(
-            <NavBarDesktop />
+            <NavBarMobile />
         );
     }
 }

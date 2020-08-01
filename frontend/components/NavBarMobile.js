@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import NavBarMobileStyle from './styles/NavBarMobileStyle';
+import HamburgerMenu from './HamburgerMenu';
 
 const NavBarMobile = () => (
     <NavBarMobileStyle>
@@ -8,6 +9,8 @@ const NavBarMobile = () => (
                 <img src="static/logos/MainLogoWhite.svg"/>
             </Link>
         </div>
+
+        <HamburgerMenu />
 
         <div>
             <Link href="/">
