@@ -1,8 +1,14 @@
 import Link from 'next/link';
-import NavBarDesktopStyle from './styles/NavBarDesktopStyle';
+import NavBarMobileStyle from './styles/NavBarMobileStyle';
 
-const NavBarDesktop = () => (
-    <NavBarDesktopStyle>
+const NavBarMobile = () => (
+    <NavBarMobileStyle>
+        <div>
+            <Link href="/">
+                <img src="static/logos/MainLogoWhite.svg"/>
+            </Link>
+        </div>
+
         <div>
             <Link href="/">
                 <a>Home</a>
@@ -16,20 +22,11 @@ const NavBarDesktop = () => (
             <Link href="/testimonial">
                 <a>Testimonials</a>
             </Link>
-        </div>
-        
-        <div>
-            <Link href="/">
-                <img src="static/logos/MainLogoWhite.svg"/>
-            </Link>
-        </div>
-        
-        <div>
             <Link href="/contact">
                 <a>Contact</a>
             </Link>
         </div>
-    </NavBarDesktopStyle>
+    </NavBarMobileStyle>
 );
 
-export default NavBarDesktop;
+export default NavBarMobile;

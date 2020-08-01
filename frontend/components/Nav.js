@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import NavBarDesktop from './NavBarDesktop';
+import NavBarMobile from './NavBarMobile';
 
 var yScrollVal = 0;
-var topOfPage = true;
 
 class Nav extends Component {
 
@@ -32,14 +32,14 @@ class Nav extends Component {
             bar.style.paddingTop = '0';
             bar.style.transition = 'height 1.5s';
             link.forEach(l => l.style.color = '#501414');
-            logo.src = 'static/MainLogoMaroon.svg'
+            logo.src = 'static/logos/MainLogoMaroon.svg'
         } else {
             bar.style.backgroundColor = 'transparent';
             bar.style.height = '20vh';
             bar.style.paddingTop = '5vh';
             bar.style.transition = 'height 1.5s';
             link.forEach(l => l.style.color = 'white');
-            logo.src = 'static/MainLogoWhite.svg'
+            logo.src = 'static/logos/MainLogoWhite.svg'
         }
     };
 
