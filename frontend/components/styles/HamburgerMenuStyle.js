@@ -24,9 +24,8 @@ const HamburgerMenuStyle = styled.div`
         
         cursor: pointer;
         
-        /* opacity: 0; hide this */
         opacity: 0;
-        z-index: 2; /* and place it over the hamburger */
+        z-index: 3; /* and place it over the hamburger */
         
         -webkit-touch-callout: none;
     }
@@ -41,7 +40,7 @@ const HamburgerMenuStyle = styled.div`
         background: white;
         border-radius: 3px;
         
-        z-index: 1;
+        z-index: 2;
         
         transform-origin: 4px 0px;
         
@@ -73,6 +72,12 @@ const HamburgerMenuStyle = styled.div`
 
     input:checked ~ div > span:last-child {
         transform: translate(0px, 0px) rotate(-45deg);
+    }
+
+    input:checked ~ ul {
+        width: 100vw;
+        opacity: 1;
+        transition: width 0.5s; 
     }
 `;
 
