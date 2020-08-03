@@ -5,9 +5,9 @@ import HamburgerMenu from './HamburgerMenu';
 
 const Logo = styled.div `
     padding-left: 3vw;
-
     img {
         max-height: 8rem;
+        cursor: pointer;
     }
 `;
 

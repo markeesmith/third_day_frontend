@@ -27,6 +27,7 @@ const NavBarDesktop = styled.ul`
 
     img {
         max-height: 8rem;
+        cursor: pointer;
     }
 
     div {
