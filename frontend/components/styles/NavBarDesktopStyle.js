@@ -53,20 +53,6 @@ const NavBarDesktop = styled.ul`
         display: flex;
         justify-content: space-between;
     }
-
-    .topNB {
-        background-color: transparent;
-        height: 20vh;
-        padding-top: 5vh;
-        transition: height 1.5s;
-    }
-
-    .otherNB {
-        background-color: white;
-        height: 15vh;
-        padding-top: 0;
-        transition: height 1.5s;
-    }
 `;
 
 export default NavBarDesktop;

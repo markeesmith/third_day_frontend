@@ -4,9 +4,11 @@ import HamburgerMenuStyle from './styles/HamburgerMenuStyle';
 const HamburgerMenu = () => (
     <HamburgerMenuStyle>
         <input type='checkbox' />
-        <span></span>
-        <span></span>
-        <span></span>
+        <div>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </HamburgerMenuStyle>
 );
 
