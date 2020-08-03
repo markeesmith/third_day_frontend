@@ -1,6 +1,8 @@
 import App, { Container } from 'next/app';
 import { createGlobalStyle } from 'styled-components';
 import Page from '../components/Page';
+import { ApolloProvider } from 'react-apollo';
+import withData from '../lib/withData';
 
 const GlobalStyle = createGlobalStyle`
     html {
@@ -37,15 +39,19 @@ const GlobalStyle = createGlobalStyle`
 
 class MyApp extends App {
     render() {
-        const { Component } = this.props;
+        const { Component, apollo } = this.props;
 
         return (
-            <Page>
-                <Component />
-                <GlobalStyle />
-            </Page>
+            <Container>
+                <ApolloProvider client={apollo}>
+                    <Page>
+                        <Component />
+                        <GlobalStyle />
+                    </Page>
+                </ApolloProvider>
+            </Container>
         );
     }
 }
 
-export default MyApp;
+export default withData(MyApp);
