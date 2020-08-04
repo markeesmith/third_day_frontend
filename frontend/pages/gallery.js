@@ -5,11 +5,6 @@ const Gallery = () => (
     <div>
         <h1>Gallery Page</h1>
     </div>
-    /*
-    <JumboTextOnly 
-        title="Gallery" 
-        subtitle="View Some of the Beautiful Work Completed by Third Day Builders" 
-    />*/
 
 );
 

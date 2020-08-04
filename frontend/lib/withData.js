@@ -1,7 +1,7 @@
 import withApollo from 'next-with-apollo';
 import ApolloClient from 'apollo-boost';
 import { endpoint } from '../config';
-import { LOCAL_QUERY_STATE, LOCAL_STATE_QUERY } from '../components/HamburgerMenu';
+import { LOCAL_STATE_QUERY } from '../components/HamburgerMenu';
 
 function createClient({ headers }) {
     return new ApolloClient({
@@ -24,6 +24,16 @@ function createClient({ headers }) {
                         });
                         const data = {
                             data: { hamburgerMenuOpen: !hamburgerMenuOpen },
+                        };
+                        cache.writeData(data);
+                        return data;
+                    },
+                    disableHamburger(_, variables, { cache }) {
+                        const { hamburgerMenuOpen } = cache.readQuery({
+                            query: LOCAL_STATE_QUERY,
+                        });
+                        const data = {
+                            data: { hamburgerMenuOpen: false },
                         };
                         cache.writeData(data);
                         return data;

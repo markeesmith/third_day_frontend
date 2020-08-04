@@ -8,16 +8,20 @@ const OffScreenMenuStyles = styled.ul`
     margin-block-end: 0;
     padding-inline-start: 0;
     height: 100vh;
-    width: 0vw;
+    /* width: 0vw; */
+    width: ${props => (props.open ? '100vw' : '0vw')};
     
     overflow: hidden;
-    opacity: 0;
+    /* opacity: 0; */
+    opacity: ${props => (props.open ? 1 : 0)};
     background-color: #501414;
     z-index: 1;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    transition: all 0.3s;
 
     div:first-of-type {
         height: 85vh;
@@ -34,7 +38,7 @@ const OffScreenMenuStyles = styled.ul`
 
     p {
         color: white;
-        font-size: 2rem;
+        font-size: 1.8rem;
         text-align: center;
         margin: 0;
         font-weight: bold;

@@ -73,12 +73,6 @@ const HamburgerMenuStyle = styled.div`
     input:checked ~ div > span:last-child {
         transform: translate(0px, 0px) rotate(-45deg);
     }
-
-    input:checked ~ ul {
-        width: 100vw;
-        opacity: 1;
-        transition: width 0.5s; 
-    }
 `;
 
 export default HamburgerMenuStyle;
