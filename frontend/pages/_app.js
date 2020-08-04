@@ -42,14 +42,12 @@ class MyApp extends App {
         const { Component, apollo } = this.props;
 
         return (
-            <Container>
-                <ApolloProvider client={apollo}>
-                    <Page>
-                        <Component />
-                        <GlobalStyle />
-                    </Page>
-                </ApolloProvider>
-            </Container>
+            <ApolloProvider client={apollo}>
+                <Page>
+                    <Component />
+                    <GlobalStyle />
+                </Page>
+            </ApolloProvider>
         );
     }
 }

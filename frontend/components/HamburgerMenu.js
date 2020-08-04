@@ -1,7 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Query, Mutation } from 'react-apollo';
+import gql from 'graphql-tag';
 import Link from 'next/link';
 import styled from 'styled-components';
 import HamburgerMenuStyle from './styles/HamburgerMenuStyle';
+
+const LOCAL_STATE_QUERY = gql`
+    query {
+        hamburgerMenuOpen @client
+    }
+`;
+
+const TOGGLE_HAMBURGER_MUTATION = gql`
+    mutation {
+        toggleHamburger @client
+    }  
+`;
 
 const OffScreenMenu = styled.ul`
     position: fixed;
@@ -52,68 +66,53 @@ const OffScreenMenu = styled.ul`
     }
 `;
 
-class HamburgerMenu extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            isChecked: false
-        }
-
-        this.handleCheckChange = this.handleCheckChange.bind(this);
-    }
-
-    handleCheckChange(event) {
-        this.setState({
-            isChecked: event.target.checked
-        });
-    }
-
-    render() {
-        return(
-            <div> 
-                <HamburgerMenuStyle>
-                    <input 
-                        type='checkbox' 
-                        checked={this.state.isChecked} 
-                        onChange={this.handleCheckChange}
-                    />
-                    <div>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <OffScreenMenu>
-                        <div>
-                            <Link href="/">
-                                <a>Home</a>
-                            </Link>
-                            <Link href="/about">
-                                <a>About</a>
-                            </Link>
-                            <Link href="/gallery">
-                                <a>Gallery</a>
-                            </Link>
-                            <Link href="/testimonial">
-                                <a>Testimonials</a>
-                            </Link>
-                            <Link href="/contact">
-                                <a>Contact</a>
-                            </Link>
-                            <br />
-                            <hr />
-                            <br />
-                            <p>Have a project in mind?</p>
-                            <p>We can't wait to hear about it!</p>
-                            <p>weaver.thirdday@gmail.com</p>
-                            <p>(304) 283-3863</p>
-                            <p><img src='static/logos/MainLogoWhite.svg' /></p>
-                        </div>
-                    </OffScreenMenu>
-                </HamburgerMenuStyle>
+const HamburgerMenu = () => (
+<Mutation mutation={ TOGGLE_HAMBURGER_MUTATION }>
+    {toggleHamburger => (
+    <Query query={ LOCAL_STATE_QUERY }>
+        {({ data }) => (
+        <HamburgerMenuStyle>
+            <input 
+                type='checkbox' 
+                checked={data.hamburgerMenuOpen} 
+                onChange={toggleHamburger}
+            />
+            <div>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        );
-    }
-}
+            <OffScreenMenu>
+                <div>
+                    <Link href="/">
+                        <a>Home</a>
+                    </Link>
+                    <Link href="/about">
+                        <a>About</a>
+                    </Link>
+                    <Link href="/gallery">
+                        <a>Gallery</a>
+                    </Link>
+                    <Link href="/testimonial">
+                        <a>Testimonials</a>
+                    </Link>
+                    <Link href="/contact">
+                        <a>Contact</a>
+                    </Link>
+                    <br />
+                    <hr />
+                    <br />
+                    <p>Have a project in mind?</p>
+                    <p>We can't wait to hear about it!</p>
+                    <p>weaver.thirdday@gmail.com</p>
+                    <p>(304) 283-3863</p>
+                    <p><img src='static/logos/MainLogoWhite.svg' /></p>
+                </div>
+            </OffScreenMenu>
+        </HamburgerMenuStyle>
+    )}</Query> 
+ )}</Mutation>
+);
 
 export default HamburgerMenu;
+export { LOCAL_STATE_QUERY, TOGGLE_HAMBURGER_MUTATION };
