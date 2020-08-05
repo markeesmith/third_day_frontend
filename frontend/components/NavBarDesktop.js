@@ -3,7 +3,7 @@ import Logo from './Logo';
 import NavBarDesktopStyle from './styles/NavBarDesktopStyle';
 
 const NavBarDesktop = (props) => (
-    <NavBarDesktopStyle>
+    <NavBarDesktopStyle top={props.top}>
         <div>
             <Link href="/">
                 <a>Home</a>

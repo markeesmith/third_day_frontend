@@ -15,12 +15,12 @@ const TOGGLE_HAMBURGER_MUTATION = gql`
     }  
 `;
 
-const HamburgerMenu = () => (
+const HamburgerMenu = (props) => (
 <Mutation mutation={ TOGGLE_HAMBURGER_MUTATION }>
     {toggleHamburger => (
     <Query query={ LOCAL_STATE_QUERY }>
         {({ data }) => (
-        <HamburgerMenuStyle>
+        <HamburgerMenuStyle top={props.top}>
             <input 
                 type='checkbox' 
                 checked={data.hamburgerMenuOpen} 

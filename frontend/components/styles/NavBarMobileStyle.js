@@ -6,14 +6,17 @@ const NavBarMobileStyle = styled.div`
     margin-block-start: 0;
     margin-block-end: 0;
     padding-inline-start: 0;
-    padding-top: 5vh;
-    height: 20vh;
     width: 100vw;
-    background-color: transparent;
+
+    padding-top: ${props => (props.top ? '5vh' : '0')};
+    height: ${props => (props.top ? '20vh' : '15vh')};;
+    background-color: ${props => (props.top ? 'transparent' : 'white')};;
 
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
+    transition: all 0.5s;
 
     div {
         width: 50vw;

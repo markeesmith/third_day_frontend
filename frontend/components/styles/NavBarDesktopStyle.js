@@ -6,16 +6,19 @@ const NavBarDesktop = styled.ul`
     margin-block-start: 0;
     margin-block-end: 0;
     padding-inline-start: 0;
-    padding-top: 5vh;
-    height: 20vh;
+    background-color: ${props => (props.top ? 'transparent' : 'white')};
+    padding-top: ${props => (props.top ? '5vh' : '0')};
+    height: ${props => (props.top ? '20vh' : '15vh')};;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
+    transition: all 0.3s;
+
     a {
         text-decoration: none;
-        color: white;
+        color: ${props => (props.top ? 'white' : '#501414')};
         font-size: 2rem;
         font-weight: bold;
         font-family: 'FuturaPT-Light';

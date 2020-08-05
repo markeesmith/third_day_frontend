@@ -37,7 +37,7 @@ const HamburgerMenuStyle = styled.div`
         margin-bottom: 5px;
         position: relative;
         
-        background: white;
+        background: ${props => (props.top ? 'white' : '#501414')};
         border-radius: 3px;
         
         z-index: 2;
