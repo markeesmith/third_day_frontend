@@ -1,23 +1,15 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import NavBarMobileStyle from './styles/NavBarMobileStyle';
+import Logo from './Logo';
 import HamburgerMenu from './HamburgerMenu';
+import NavBarMobileStyle from './styles/NavBarMobileStyle';
 
-const Logo = styled.div `
-    padding-left: 3vw;
-    img {
-        max-height: 8rem;
-        cursor: pointer;
-    }
-`;
-
-const NavBarMobile = () => (
+const NavBarMobile = (props) => (
     <NavBarMobileStyle id='navbar-mobile'>
-        <Logo>
-            <Link href="/">
-                <img src="static/logos/MainLogoWhite.svg"/>
-            </Link>
-        </Logo>
+        <Logo
+            imgSrc={props.top ? 'static/logos/MainLogoWhite.svg' : 'static/logos/MainLogoMaroon.svg'}
+            pad={ true }
+        />
         <HamburgerMenu />
     </NavBarMobileStyle>
 );

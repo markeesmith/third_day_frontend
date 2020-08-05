@@ -1,7 +1,8 @@
 import Link from 'next/link';
+import Logo from './Logo';
 import NavBarDesktopStyle from './styles/NavBarDesktopStyle';
 
-const NavBarDesktop = () => (
+const NavBarDesktop = (props) => (
     <NavBarDesktopStyle>
         <div>
             <Link href="/">
@@ -18,11 +19,10 @@ const NavBarDesktop = () => (
             </Link>
         </div>
         
-        <div>
-            <Link href="/">
-                <img src="static/logos/MainLogoWhite.svg"/>
-            </Link>
-        </div>
+        <Logo 
+            imgSrc={props.top ? 'static/logos/MainLogoWhite.svg' : 'static/logos/MainLogoMaroon.svg'}
+            pad={ false }
+        />
         
         <div>
             <Link href="/contact">

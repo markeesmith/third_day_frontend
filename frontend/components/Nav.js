@@ -12,6 +12,9 @@ class Nav extends Component {
     constructor(props) {
         super(props);
         this.handleScroll = this.handleScroll.bind(this);
+        this.state = {
+            topOfPage: true,
+        };
     }
         
     componentDidMount() {
@@ -26,18 +29,25 @@ class Nav extends Component {
         yScrollVal = window.scrollY;
         
         if(isMobile) {
-            var logo = document.querySelector('img');
             var hamburger = document.querySelectorAll('span');
             var bar = document.querySelector('#navbar-mobile');
             if(yScrollVal > 30) {
-                logo.src = 'static/logos/MainLogoMaroon.svg';
+
+                this.setState({
+                    topOfPage: false,
+                });
+
                 hamburger.forEach(h => h.style.backgroundColor = '#501414');
                 bar.style.backgroundColor = 'white';
                 bar.style.height = '15vh';
                 bar.style.paddingTop = '0';
                 bar.style.transition = 'height .5s';
             } else {
-                logo.src = 'static/logos/MainLogoWhite.svg';
+
+                this.setState({
+                    topOfPage: true,
+                });
+
                 hamburger.forEach(h => h.style.backgroundColor = 'white');
                 bar.style.backgroundColor = 'transparent';
                 bar.style.height = '20vh';
@@ -50,28 +60,36 @@ class Nav extends Component {
             var link = document.querySelectorAll('a');
             
             if(yScrollVal > 30) {
+
+                this.setState({
+                    topOfPage: false,
+                });
+
                 bar.style.backgroundColor = 'white';
                 bar.style.height = '15vh';
                 bar.style.paddingTop = '0';
                 bar.style.transition = 'height .5s';
                 link.forEach(l => l.style.color = '#501414');
-                logo.src = 'static/logos/MainLogoMaroon.svg'
             } else {
+
+                this.setState({
+                    topOfPage: true,
+                });
+
                 bar.style.backgroundColor = 'transparent';
                 bar.style.height = '20vh';
                 bar.style.paddingTop = '5vh';
                 bar.style.transition = 'height .5s';
                 link.forEach(l => l.style.color = 'white');
-                logo.src = 'static/logos/MainLogoWhite.svg'
             }
         }
     };
 
     render() {
         if(isMobile) {
-            return <NavBarMobile />
+            return <NavBarMobile top={this.state.topOfPage} />
         } else {
-            return <NavBarDesktop />
+            return <NavBarDesktop top={this.state.topOfPage} />
         }
     }
 }
