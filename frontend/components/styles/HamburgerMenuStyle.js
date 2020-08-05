@@ -12,8 +12,6 @@ const HamburgerMenuStyle = styled.div`
     user-select: none;
     
     div {
-        display: block;
-        position: absolute;
         width: 40px;
         height: 32px;
     }
@@ -38,6 +36,9 @@ const HamburgerMenuStyle = styled.div`
         height: 4px;
         margin-bottom: 5px;
         position: relative;
+
+        float: right;
+        clear: right;
         
         background: ${props => (props.top ? 'white' : '#501414')};
         border-radius: 3px;
