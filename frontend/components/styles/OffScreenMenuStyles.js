@@ -8,11 +8,9 @@ const OffScreenMenuStyles = styled.ul`
     margin-block-end: 0;
     padding-inline-start: 0;
     height: 100vh;
-    /* width: 0vw; */
     width: ${props => (props.open ? '100vw' : '0vw')};
     
     overflow: hidden;
-    /* opacity: 0; */
     opacity: ${props => (props.open ? 1 : 0)};
     background-color: #501414;
     z-index: 1;

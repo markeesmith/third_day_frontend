@@ -12,6 +12,8 @@ const HamburgerMenuStyle = styled.div`
     user-select: none;
     
     div {
+        display: block;
+        position: absolute;
         width: 40px;
         height: 32px;
     }

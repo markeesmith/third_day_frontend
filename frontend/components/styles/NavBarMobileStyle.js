@@ -8,8 +8,8 @@ const NavBarMobileStyle = styled.div`
     padding-inline-start: 0;
     width: 100vw;
 
-    padding-top: ${props => (props.top ? '5vh' : '0')};
-    height: ${props => (props.top ? '20vh' : '15vh')};;
+    padding-top: ${props => (props.open ? '0' : (props.top ? '5vh' : '0'))};
+    height: ${props => (props.open ? '15vh' : (props.top ? '20vh' : '15vh'))};
     background-color: ${props => (props.top ? 'transparent' : 'white')};;
 
     display: flex;
