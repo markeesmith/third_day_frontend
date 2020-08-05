@@ -16,25 +16,25 @@ const TOGGLE_HAMBURGER_MUTATION = gql`
 `;
 
 const HamburgerMenu = (props) => (
-<Mutation mutation={ TOGGLE_HAMBURGER_MUTATION }>
-    {toggleHamburger => (
-    <Query query={ LOCAL_STATE_QUERY }>
-        {({ data }) => (
-        <HamburgerMenuStyle top={props.top}>
-            <input 
-                type='checkbox' 
-                checked={data.hamburgerMenuOpen} 
-                onChange={toggleHamburger}
-            />
-            <div>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <OffScreenMenu />
-        </HamburgerMenuStyle>
-    )}</Query> 
- )}</Mutation>
+    <Mutation mutation={ TOGGLE_HAMBURGER_MUTATION }>
+        {toggleHamburger => (
+        <Query query={ LOCAL_STATE_QUERY }>
+            {({ data }) => (
+            <HamburgerMenuStyle top={props.top}>
+                <input 
+                    type='checkbox' 
+                    checked={data.hamburgerMenuOpen} 
+                    onChange={toggleHamburger}
+                />
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <OffScreenMenu />
+            </HamburgerMenuStyle>
+        )}</Query> 
+    )}</Mutation>
 );
 
 export default HamburgerMenu;

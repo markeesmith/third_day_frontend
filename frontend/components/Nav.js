@@ -4,7 +4,7 @@ import Link from 'next/link';
 import NavBarDesktop from './NavBarDesktop';
 import NavBarMobile from './NavBarMobile';
 
-var isMobile = true;
+var isMobile = false;
 
 class Nav extends Component {
 
