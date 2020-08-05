@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import Header from '../components/Header';
 import Meta from '../components/Meta'
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const theme = {
     maxWidth: '1000px',
@@ -28,6 +29,7 @@ class Page extends Component {
                     <Meta />
                     <Header />
                     <Inner>{this.props.children}</Inner>
+                    <Footer />
                 </StyledPage>
             </ThemeProvider>
         )

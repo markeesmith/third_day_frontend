@@ -21,7 +21,6 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         background-color: #FFFAFA;
-        background-color: black;
     }
     *, *:before, *:after {
         box-sizing: inherit;
