@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import FooterStyles from './styles/FooterStyles';
 import Logo from './Logo';
+import FA from 'react-fontawesome';
 
-const isMobile = true;
+const isMobile = false;
 
 const Footer = () => (
     <FooterStyles mobile={isMobile}>
@@ -10,27 +11,49 @@ const Footer = () => (
         <div className='upper-wrapper'>
             <div className='contact'>
                 <h2>Contact Us</h2>
-                <Logo imgSrc='static/logos/MainLogoMaroon.svg'/>
-                <p>Email</p>
-                <p>Phone</p>
+                <div className='logo'>
+                    <div>
+                        <Logo imgSrc='static/logos/MainLogoMaroon.svg'/>
+                    </div>
+                    <div>
+                        <p><FA name="envelope" />&nbsp;weaver.thirdday@gmail.com</p>
+                        <p><FA name="phone" />&nbsp;(304) 283-3863</p>
+                    </div>
+                </div>
             </div>
             <div className='navigation'>
                 <h2>Navigation</h2>
-                <Link href='/'>
-                    <a>Home</a>
-                </Link>
-                <Link href='/about'>
-                    <a>About</a>
-                </Link>
-                <Link href='/gallery'>
-                    <a>Gallery</a>
-                </Link>
-                <Link href='/testimonials'>
-                    <a>Testimonials</a>
-                </Link>
-                <Link href='/contact'>
-                    <a>Contact</a>
-                </Link>
+                <div className='navigation-submenu'>
+                    <div>
+                        <div>
+                            <Link href='/'>
+                                <a>Home</a>
+                            </Link>
+                        </div>
+                        <div>
+                            <Link href='/about'>
+                                <a>About</a>
+                            </Link>
+                        </div>  
+                        <div>
+                            <Link href='/gallery'>
+                                <a>Gallery</a>
+                            </Link>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <Link href='/testimonials'>
+                                <a>Testimonials</a>
+                            </Link>
+                        </div>
+                        <div>
+                            <Link href='/contact'>
+                                <a>Contact</a>
+                            </Link>
+                        </div>
+                    </div>                  
+                </div>
             </div>
         </div>
         <hr />
@@ -45,7 +68,7 @@ const Footer = () => (
                 <Link href='/'>
                     <a>Sitemap</a>
                 </Link>
-                <p>&copy; 2017 - 2020 &nbsp; Third Day Builders, LLC</p>
+                <p>&copy; 2017-2020 &nbsp; Third Day Builders, LLC</p>
             </div>
         </div>
     </FooterStyles>
