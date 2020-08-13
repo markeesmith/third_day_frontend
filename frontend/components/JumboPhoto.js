@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
-const JumboTextOnly = (props) => (
+const JumboPhoto = (props) => (
     <div>
         <h1>{props.title}</h1>
         <p>{props.subtitle}</p>
     </div>
 );
 
-export default JumboTextOnly;
+export default JumboPhoto;

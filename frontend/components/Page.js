@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const theme = {
-    maxWidth: '1000px',
+    maxWidth: '100vw',
     textColor: '#501414',
     backColor: '#FFFAFA'
 };

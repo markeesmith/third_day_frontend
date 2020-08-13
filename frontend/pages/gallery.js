@@ -1,11 +1,8 @@
 import Link from 'next/link';
-import JumboTextOnly from '../components/JumboTextOnly';
+import Galleries from '../components/Galleries';
 
 const Gallery = () => (
-    <div>
-        <h1>Gallery Page</h1>
-    </div>
-
+    <Galleries />
 );
 
 export default Gallery;

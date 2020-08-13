@@ -23,15 +23,15 @@ s3Obj.getBucket = () => {
     return params["Bucket"];
 };
 
-s3Obj.getAllObjects = () => {
-    return objectPromise = baseAPI.listObjects(params).promise();
+s3Obj.getAllObjects = async () => {
+    return await baseAPI.listObjects(params).promise();
 };
 
-s3Obj.getSpecificObjects = (prefix, delimiter) => {
+s3Obj.getSpecificObjects = async (prefix, delimiter) => {
     s3Obj.setPrefix(prefix);
     s3Obj.setDelimiter(delimiter);
 
-    return objectPromise = baseAPI.listObjects(params).promise();
+    return await baseAPI.listObjects(params).promise();
 };
 
 module.exports = s3Obj;
