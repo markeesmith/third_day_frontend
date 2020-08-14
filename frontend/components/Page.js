@@ -18,7 +18,7 @@ const StyledPage = styled.div`
 
 const Inner = styled.div`
     max-width: ${ props => props.theme.maxWidth };
-    height: 2000px;
+    /* height: 2000px; */
 `;
 
 class Page extends Component {

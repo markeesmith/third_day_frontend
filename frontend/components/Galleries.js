@@ -15,6 +15,17 @@ const ALL_GALLRIES_QUERY = gql`
     }
 `;
 
+const TYPE_GALLERIES_QUERY = gql`
+    query TYPE_GALLERIES_QUERY($searchTerm: String!) {
+        galleries (where: {galType: $searchTerm}) {
+            gallery_id
+            galNumberItems
+            galPath
+            galType
+        }
+    }
+`;
+
 const Center = styled.div`
     text-align: center;
 `;
@@ -22,7 +33,9 @@ const Center = styled.div`
 const GalleryList = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 5vw;
+    padding-right: 2vw;
+    padding-left: 2vw;
+    grid-gap: 2vw;
     max-width: ${props => props.theme.maxWidth };
     margin: 0 auto;
 `;
@@ -31,7 +44,12 @@ class Galleries extends Component {
     render() { 
         return ( 
             <Center>
-                <Query query={ALL_GALLRIES_QUERY}>
+                <Query 
+                    query={TYPE_GALLERIES_QUERY}
+                    variables={{
+                        searchTerm: "home",
+                    }}
+                >
                     {
                         ({data, loading, error}) => {
                             if(loading) return <p>Loading...</p>;

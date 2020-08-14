@@ -68,7 +68,7 @@ const Footer = () => (
                 <Link href='/'>
                     <a>Sitemap</a>
                 </Link>
-                <p>&copy; 2017-2020 &nbsp; Third Day Builders, LLC</p>
+                <p>&copy; 2017-{new Date().getFullYear()} &nbsp; Third Day Builders, LLC</p>
             </div>
         </div>
     </FooterStyles>

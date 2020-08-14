@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const NavBarMobileStyle = styled.div`
     position: fixed;
+    z-index: 3;
     top: 0;
     margin-block-start: 0;
     margin-block-end: 0;
