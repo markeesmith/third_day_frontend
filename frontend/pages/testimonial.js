@@ -1,10 +1,9 @@
-import Link from 'next/link';
-import JumboTextOnly from '../components/JumboTextOnly';
+import React from 'react';
 
 const Testimonial = () => (
-    <div>
-        <h1>Testimonial Page</h1>
-    </div>
+  <div>
+    <h1>Testimonial Page</h1>
+  </div>
 );
 
 export default Testimonial;

@@ -1,4 +1,6 @@
+import React from 'react';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const LogoContainer = styled.div `
@@ -9,12 +11,17 @@ const LogoContainer = styled.div `
     }
 `;
 
-const Logo = (props) => (
-    <LogoContainer pad={props.pad}>
-        <Link href="/">
-            <img src={props.imgSrc}/>
-        </Link>
-    </LogoContainer>
+const Logo = ({pad, imgSrc}) => (
+  <LogoContainer pad={pad}>
+    <Link href="/">
+      <img src={imgSrc} alt='Logo' />
+    </Link>
+  </LogoContainer>
 );
+
+Logo.propTypes = {
+    pad: PropTypes.bool.isRequired,
+    imgSrc: PropTypes.string.isRequired
+}
 
 export default Logo;

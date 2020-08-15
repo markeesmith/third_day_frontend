@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import Link from 'next/link';
-//import { isMobile } from 'react-device-detect';
+// import { isMobile } from 'react-device-detect';
 import NavBarDesktop from './NavBarDesktop';
 import NavBarMobile from './NavBarMobile';
 
-var isMobile = false;
+const isMobile = false;
 
 class Nav extends Component {
 
@@ -22,17 +21,18 @@ class Nav extends Component {
         window.removeEventListener('scroll', this.handleScroll);
     };
         
-    handleScroll(event) {
+    handleScroll() {
         if(window.scrollY > 30) this.setState({ topOfPage: false, });
         else this.setState({ topOfPage: true, });
     };
 
     render() {
+        const { topOfPage } = this.state;
         if(isMobile) {
-            return <NavBarMobile top={this.state.topOfPage} />
-        } else {
-            return <NavBarDesktop top={this.state.topOfPage} />
-        }
+            return <NavBarMobile top={topOfPage} />
+        } 
+            return <NavBarDesktop top={topOfPage} />
+        
     }
 }
 

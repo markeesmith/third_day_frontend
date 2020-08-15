@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import React from 'react';
 import Galleries from '../components/Galleries';
 
 const Gallery = () => (
-    <Galleries />
+  <Galleries />
 );
 
 export default Gallery;

@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
-import Meta from '../components/Meta'
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Meta from "./Meta"
+import Header from "./Header";
+import Footer from "./Footer";
 
 const theme = {
     maxWidth: '100vw',
@@ -21,19 +22,19 @@ const Inner = styled.div`
     /* height: 2000px; */
 `;
 
-class Page extends Component {
-    render() {
-        return(
-            <ThemeProvider theme={ theme }>
-                <StyledPage>
-                    <Meta />
-                    <Header />
-                    <Inner>{this.props.children}</Inner>
-                    <Footer />
-                </StyledPage>
-            </ThemeProvider>
-        )
-    }
+const Page = ({ children }) => (
+  <ThemeProvider theme={theme}>
+    <StyledPage>
+      <Meta />
+      <Header />
+      <Inner>{children}</Inner>
+      <Footer />
+    </StyledPage>
+  </ThemeProvider>
+);
+
+Page.propTypes = {
+    children: PropTypes.node.isRequired
 }
 
 export default Page;

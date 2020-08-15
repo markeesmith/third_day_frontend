@@ -1,19 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import Gallery from './Gallery';
-
-const ALL_GALLRIES_QUERY = gql`
-    query ALL_GALLRIES_QUERY {
-        galleries {
-            gallery_id
-            galNumberItems
-            galPath
-            galType
-        }
-    }
-`;
 
 const TYPE_GALLERIES_QUERY = gql`
     query TYPE_GALLERIES_QUERY($searchTerm: String!) {
@@ -40,29 +29,31 @@ const GalleryList = styled.div`
     margin: 0 auto;
 `;
 
-class Galleries extends Component {
-    render() { 
-        return ( 
-            <Center>
-                <Query 
-                    query={TYPE_GALLERIES_QUERY}
-                    variables={{
-                        searchTerm: "home",
-                    }}
-                >
-                    {
-                        ({data, loading, error}) => {
-                            if(loading) return <p>Loading...</p>;
-                            if(error) return <p>Error: {error.message}</p>;
-                            return <GalleryList>
-                                {data.galleries.map(gallery => <Gallery gallery={gallery} key={gallery.gallery_id} />)}
-                            </GalleryList>;
-                        }
-                    }
-                </Query>
-            </Center>
-        );
-    }
-}
+const Galleries = () => (
+  <Center>
+    <Query 
+      query={TYPE_GALLERIES_QUERY} 
+      variables={{searchTerm: "home"}}
+    >
+      {
+        ({data, loading, error}) => {
+          if(loading) return <p>Loading...</p>;
+          if(error) return (
+            <p>
+              Error:
+              {' '}
+              {error.message}
+            </p>
+          );
+          return (
+            <GalleryList>
+              {data.galleries.map(gallery => <Gallery gallery={gallery} key={gallery.gallery_id} />)}
+            </GalleryList>
+          );
+        }
+      }
+    </Query>
+  </Center>
+);
  
 export default Galleries;

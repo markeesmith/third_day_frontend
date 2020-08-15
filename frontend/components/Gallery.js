@@ -1,29 +1,34 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import FA from 'react-fontawesome';
 import GalleryStyles from './styles/GalleryStyles';
 import GalleryLogo from './GalleryLogo';
-import FA from 'react-fontawesome';
 
-class Gallery extends Component {
-    static propTypes = {
-        gallery: PropTypes.object.isRequired,
-    };
+const Gallery = ({gallery}) => {
+  const imgSrc = process.env.NEXT_PUBLIC_S3_BASE_URL + gallery.galPath;
 
-    render() {
-        const { gallery } = this.props;
-        var imgSrc = process.env.NEXT_PUBLIC_S3_BASE_URL + gallery.galPath;
+  if(gallery.galNumberItems > 1) {
+    return (
+      <GalleryStyles>
+        <FA className='picture-icon' name='clone' />
+        <GalleryLogo basePath={imgSrc} />
+      </GalleryStyles>
+    )
+  }
+  return (
+    <GalleryStyles>
+      <GalleryLogo basePath={imgSrc} />
+    </GalleryStyles>
+  )
+}
 
-        if(gallery.galNumberItems > 1) {
-            return <GalleryStyles>
-                <FA className='picture-icon' name='clone'/>
-                <GalleryLogo basePath={imgSrc}/>
-            </GalleryStyles>
-        } else {
-            return <GalleryStyles>
-                <GalleryLogo basePath={imgSrc}/>
-            </GalleryStyles>
-        }
-    }
+Gallery.propTypes = {
+  gallery: PropTypes.shape({
+    gallery_id: PropTypes.number.isRequired,
+    galNumberItems: PropTypes.number.isRequired,
+    galPath: PropTypes.string.isRequired,
+    galType: PropTypes.string.isRequired
+  }).isRequired
 }
 
 export default Gallery;

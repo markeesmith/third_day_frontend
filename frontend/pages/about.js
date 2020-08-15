@@ -1,10 +1,9 @@
-import Link from 'next/link';
-import JumboTextAndPhoto from '../components/JumboTextAndPhoto';
+import React from 'react';
 
 const About = () => (
-    <div>
-        <h1>About Page</h1>
-    </div>
+  <div>
+    <h1>About Page</h1>
+  </div>
 );
 
 export default About;
