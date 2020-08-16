@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCamera } from '@fortawesome/free-solid-svg-icons'
 
 const Overlay = styled.div`
     position: absolute;
@@ -26,7 +28,11 @@ const NumItems = styled.div`
 const GalleryOverlay = ({numItems, hovered}) => (
   <Overlay>
     <NumItems hovered={hovered}>
-      <p>{numItems}</p>
+      <p>
+        <FontAwesomeIcon icon={faCamera} />
+        &nbsp;
+        {numItems}
+      </p>
     </NumItems>
   </Overlay>
 );

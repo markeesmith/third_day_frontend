@@ -12,6 +12,9 @@
   "author": "Markee Smith",
   "license": "MIT",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "apollo-boost": "^0.4.9",
     "apollo-client": "^2.6.10",
     "aws-sdk": "^2.728.0",
@@ -25,7 +28,6 @@
     "react-apollo": "^3.1.5",
     "react-device-detect": "^1.13.1",
     "react-dom": "^16.13.1",
-    "react-fontawesome": "^1.7.1",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {

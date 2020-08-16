@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import FA from 'react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClone } from '@fortawesome/free-solid-svg-icons'
 import GalleryStyles from './styles/GalleryStyles';
 import GalleryOverlay from './GalleryOverlay';
 import GalleryLogo from './GalleryLogo';
@@ -26,7 +27,7 @@ class Gallery extends Component {
     if(gallery.galNumberItems > 1) {
       return (
         <GalleryStyles>
-          <FA className='picture-icon' name='clone' />
+          <FontAwesomeIcon className='picture-icon' icon={faClone} />
           <GalleryOverlay 
             hovered={galleryHovered}
             numItems={gallery.galNumberItems} 

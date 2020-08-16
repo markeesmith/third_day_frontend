@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import FA from 'react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 import FooterStyles from './styles/FooterStyles';
 import Logo from './Logo';
 
@@ -18,12 +19,12 @@ const Footer = () => (
           </div>
           <div>
             <p>
-              <FA name="envelope" />
-&nbsp;weaver.thirdday@gmail.com
+              <FontAwesomeIcon icon={faEnvelope} size="xs" />
+              &nbsp;weaver.thirdday@gmail.com
             </p>
             <p>
-              <FA name="phone" />
-&nbsp;(304) 283-3863
+              <FontAwesomeIcon icon={faPhone} size="xs" />
+              &nbsp;(304) 283-3863
             </p>
           </div>
         </div>
@@ -79,7 +80,7 @@ const Footer = () => (
           &copy; 2017-
           {new Date().getFullYear()}
           {' '}
-&nbsp; Third Day Builders, LLC
+          &nbsp; Third Day Builders, LLC
         </p>
       </div>
     </div>

@@ -4,18 +4,19 @@ const GalleryStyles = styled.div`
     position: relative;
     height: 50vh;
     max-height: 50vh;
+    border: 1px solid #501414;
 
     .picture-icon {
         position: absolute;
         right: 0;
         padding-top: 2.5vh;
         padding-right: 1.5vw;
-        color: #501414;
+        color: white;
         font-weight: bolder;
-        font-size: 2.5rem;
-        z-index: 1;
+        font-size: 3.75rem;
         pointer-events: none;
         fill: white;
+        z-index: 1;
     }
 
     a {
