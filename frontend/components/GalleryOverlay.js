@@ -19,19 +19,21 @@ const NumItems = styled.div`
     font-size: 2.5rem;
     z-index: 2;
     pointer-events: none;
-    opacity: 1;
+    opacity: ${props => props.hovered ? '1' : '0'};
+    transition: all .25s;
 `;
 
-const GalleryOverlay = ({numItems}) => (
+const GalleryOverlay = ({numItems, hovered}) => (
   <Overlay>
-    <NumItems className='galleryCount'>
+    <NumItems hovered={hovered}>
       <p>{numItems}</p>
     </NumItems>
   </Overlay>
 );
 
 GalleryOverlay.propTypes = {
-    numItems: PropTypes.number.isRequired
+    numItems: PropTypes.number.isRequired,
+    hovered: PropTypes.bool.isRequired
 }
 
 export default GalleryOverlay;
