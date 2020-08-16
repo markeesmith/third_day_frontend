@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FA from 'react-fontawesome';
 import GalleryStyles from './styles/GalleryStyles';
+import GalleryOverlay from './GalleryOverlay';
 import GalleryLogo from './GalleryLogo';
 
 const Gallery = ({gallery}) => {
@@ -11,12 +12,14 @@ const Gallery = ({gallery}) => {
     return (
       <GalleryStyles>
         <FA className='picture-icon' name='clone' />
+        <GalleryOverlay numItems={gallery.galNumberItems} />
         <GalleryLogo basePath={imgSrc} />
       </GalleryStyles>
     )
   }
   return (
     <GalleryStyles>
+      <GalleryOverlay numItems={gallery.galNumberItems} />
       <GalleryLogo basePath={imgSrc} />
     </GalleryStyles>
   )

@@ -32,6 +32,7 @@ const GalleryStyles = styled.div`
 
     img:hover {
         opacity: 0.6;
+        transition: all 0.25s;
     }
 `;
 
