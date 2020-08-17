@@ -12,7 +12,31 @@ const TOGGLE_HAMBURGER_MUTATION = gql`
     }  
 `;
 
+const TYPE_GALLERIES_QUERY = gql`
+    query TYPE_GALLERIES_QUERY($searchTerm: String!) {
+        galleries (where: {galType: $searchTerm}) {
+            gallery_id
+            galNumberItems
+            galPath
+            galType
+        }
+    }
+`;
+
+const ALL_GALLERIES_QUERY = gql`
+  query ALL_GALLERIES_QUERY {
+    galleries {
+      gallery_id
+      galNumberItems
+      galPath
+      galType
+    }
+  }
+`;
+
 export { 
     LOCAL_STATE_QUERY, 
     TOGGLE_HAMBURGER_MUTATION,
+    TYPE_GALLERIES_QUERY,
+    ALL_GALLERIES_QUERY,
 };

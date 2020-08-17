@@ -1,22 +1,15 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
 import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
 import Gallery from './Gallery';
+import GalleryDropDown from './GalleryDropDown'
+import { ALL_GALLERIES_QUERY, TYPE_GALLERIES_QUERY } from '../lib/gql'
 
-const TYPE_GALLERIES_QUERY = gql`
-    query TYPE_GALLERIES_QUERY($searchTerm: String!) {
-        galleries (where: {galType: $searchTerm}) {
-            gallery_id
-            galNumberItems
-            galPath
-            galType
-        }
-    }
-`;
 
 const Center = styled.div`
     text-align: center;
+    /* TODO: Get rid of this */
+    padding-top: 25vh;
 `;
 
 const GalleryList = styled.div`
@@ -29,31 +22,73 @@ const GalleryList = styled.div`
     margin: 0 auto;
 `;
 
-const Galleries = () => (
-  <Center>
-    <Query 
-      query={TYPE_GALLERIES_QUERY} 
-      variables={{searchTerm: "home"}}
-    >
-      {
-        ({data, loading, error}) => {
-          if(loading) return <p>Loading...</p>;
-          if(error) return (
-            <p>
-              Error:
-              {' '}
-              {error.message}
-            </p>
-          );
-          return (
-            <GalleryList>
-              {data.galleries.map(gallery => <Gallery gallery={gallery} key={gallery.gallery_id} />)}
-            </GalleryList>
-          );
-        }
-      }
-    </Query>
-  </Center>
-);
+class Galleries extends Component {
+  constructor(props) {
+    super(props);
+    this.dropDownChange = this.dropDownChange.bind(this);
+    this.state = {
+      galleryFilter: 'ALL',
+      whichQuery: ALL_GALLERIES_QUERY
+    };
+  }
+
+  dropDownChange(e) {
+    const {value} = e.target;
+
+    // Set correct query
+    if(value === "all") {
+      this.setState({
+        whichQuery: ALL_GALLERIES_QUERY
+      });
+    } else {
+      this.setState({
+        whichQuery: TYPE_GALLERIES_QUERY
+      });
+    }
+
+    // Set search term for query
+    this.setState({
+      galleryFilter: value
+    });
+
+    // Set selected value
+
+  }
+
+  render() {
+    const { galleryFilter, whichQuery } = this.state;
+    return(
+      <Center>
+        <Query 
+          query={whichQuery} 
+          variables={{searchTerm: galleryFilter}}
+        >
+          {
+            ({data, loading, error}) => {
+              if(loading) return <p>Loading...</p>;
+              if(error) return (
+                <p>
+                  Error:
+                  {' '}
+                  {error.message}
+                </p>
+              );
+              return (
+                <div>
+                  <GalleryDropDown 
+                    dropDownChange={this.dropDownChange}
+                  />
+                  <GalleryList>
+                    {data.galleries.map(gallery => <Gallery gallery={gallery} key={gallery.gallery_id} />)}
+                  </GalleryList>
+                </div>
+              );
+            }
+          }
+        </Query>
+      </Center>
+    );
+  }
+}
  
 export default Galleries;

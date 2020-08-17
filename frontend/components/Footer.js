@@ -19,11 +19,11 @@ const Footer = () => (
           </div>
           <div>
             <p>
-              <FontAwesomeIcon icon={faEnvelope} size="xs" />
+              <FontAwesomeIcon icon={faEnvelope} size="1x" />
               &nbsp;weaver.thirdday@gmail.com
             </p>
             <p>
-              <FontAwesomeIcon icon={faPhone} size="xs" />
+              <FontAwesomeIcon icon={faPhone} size="1x" />
               &nbsp;(304) 283-3863
             </p>
           </div>
