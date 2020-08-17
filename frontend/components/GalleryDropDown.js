@@ -1,17 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-const GalleryDropDown = ({dropDownChange}) => (
+function optionText(option) {
+  return `${option.charAt(0).toUpperCase() + option.slice(1)  } Galleries`;
+}
+
+const GalleryDropDown = ({dropDownChange, values, selectedOption}) => (
   <select name="gallerySelect" onChange={dropDownChange}>
-    <option value="all">All Galleries</option>
-    <option value="home">Homes</option>
-    <option value="addition">Additions</option>
-    <option value="remodel">Remodels</option>
+    {values.map(option => (
+      (option === selectedOption) ? 
+        <option value={option} selected>{optionText(option)}</option> 
+        : 
+        <option value={option}>{optionText(option)}</option>
+    ))}
   </select>
 );
 
 GalleryDropDown.propTypes = {
-  dropDownChange: PropTypes.string.isRequired
+  dropDownChange: PropTypes.func.isRequired,
+  values: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  selectedOption: PropTypes.string.isRequired
 }
 
 export default GalleryDropDown;

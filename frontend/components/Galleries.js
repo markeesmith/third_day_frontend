@@ -27,7 +27,7 @@ class Galleries extends Component {
     super(props);
     this.dropDownChange = this.dropDownChange.bind(this);
     this.state = {
-      galleryFilter: 'ALL',
+      gallerySelection: 'all',
       whichQuery: ALL_GALLERIES_QUERY
     };
   }
@@ -36,7 +36,7 @@ class Galleries extends Component {
     const {value} = e.target;
 
     // Set correct query
-    if(value === "all") {
+    if(value === 'all') {
       this.setState({
         whichQuery: ALL_GALLERIES_QUERY
       });
@@ -48,20 +48,18 @@ class Galleries extends Component {
 
     // Set search term for query
     this.setState({
-      galleryFilter: value
+      gallerySelection: value
     });
-
-    // Set selected value
-
   }
 
   render() {
-    const { galleryFilter, whichQuery } = this.state;
+    const { gallerySelection, whichQuery } = this.state;
+    const ddlValues = ["all", "home", "addition", "remodel"];
     return(
       <Center>
         <Query 
           query={whichQuery} 
-          variables={{searchTerm: galleryFilter}}
+          variables={{searchTerm: gallerySelection}}
         >
           {
             ({data, loading, error}) => {
@@ -77,6 +75,8 @@ class Galleries extends Component {
                 <div>
                   <GalleryDropDown 
                     dropDownChange={this.dropDownChange}
+                    values={ddlValues}
+                    selectedOption={gallerySelection}
                   />
                   <GalleryList>
                     {data.galleries.map(gallery => <Gallery gallery={gallery} key={gallery.gallery_id} />)}
