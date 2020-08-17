@@ -15,6 +15,7 @@ const Center = styled.div`
 const GalleryList = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding-top: 5vh;
     padding-right: 2vw;
     padding-left: 2vw;
     grid-gap: 2vw;
@@ -34,8 +35,6 @@ class Galleries extends Component {
 
   dropDownChange(e) {
     const {value} = e.target;
-
-    // Set correct query
     if(value === 'all') {
       this.setState({
         whichQuery: ALL_GALLERIES_QUERY
@@ -45,8 +44,6 @@ class Galleries extends Component {
         whichQuery: TYPE_GALLERIES_QUERY
       });
     }
-
-    // Set search term for query
     this.setState({
       gallerySelection: value
     });
