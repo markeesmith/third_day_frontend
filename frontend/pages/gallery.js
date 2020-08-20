@@ -1,9 +1,21 @@
 import React from 'react';
+import {withRouter} from 'next/router'
+import PropTypes from 'prop-types'
 
-const Gallery = () => (
+const Gallery = ({router}) => (
   <h1>
-    Build individual galleries here. Read in query params?
+    Gallery Page. Gallery of id =
+    {' '}
+    {router.query.id}
   </h1>
 );
 
-export default Gallery;
+Gallery.propTypes = {
+  router: PropTypes.shape({
+    query: PropTypes.shape({
+      id: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
+}
+ 
+export default withRouter(Gallery);
