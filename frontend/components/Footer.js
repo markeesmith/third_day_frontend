@@ -44,7 +44,7 @@ const Footer = () => (
               </Link>
             </div>  
             <div>
-              <Link href='/gallery'>
+              <Link href='/galleries'>
                 <a>Gallery</a>
               </Link>
             </div>

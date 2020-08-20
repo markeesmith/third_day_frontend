@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 
 const GalleryDDStyles = styled.select`
-  display: block;
 	font-weight: 700;
-	color: #444;
+	color: #501414;
 	line-height: 1.3;
 	padding: .6em 1.4em .5em .8em;
 	width: 20%;

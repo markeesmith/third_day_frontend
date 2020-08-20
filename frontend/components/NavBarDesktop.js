@@ -13,7 +13,7 @@ const NavBarDesktop = ({top}) => (
       <Link href="/about">
         <a>About</a>
       </Link>
-      <Link href="/gallery">
+      <Link href="/galleries">
         <a>Gallery</a>
       </Link>
       <Link href="/testimonial">

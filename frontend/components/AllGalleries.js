@@ -23,7 +23,7 @@ const GalleryList = styled.div`
     margin: 0 auto;
 `;
 
-class Galleries extends Component {
+class AllGalleries extends Component {
   constructor(props) {
     super(props);
     this.dropDownChange = this.dropDownChange.bind(this);
@@ -88,4 +88,4 @@ class Galleries extends Component {
   }
 }
  
-export default Galleries;
+export default AllGalleries;

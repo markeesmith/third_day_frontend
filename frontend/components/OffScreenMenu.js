@@ -19,7 +19,7 @@ const OffScreenMenu = () => (
                 {/* eslint-disable-next-line */}
                 <a role='button' tabIndex={0} onClick={toggleHamburger}>About</a>
               </Link>
-              <Link href="/gallery">
+              <Link href="/galleries">
                 {/* eslint-disable-next-line */}
                 <a role='button' tabIndex={0} onClick={toggleHamburger}>Gallery</a>
               </Link>

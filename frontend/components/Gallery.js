@@ -33,6 +33,7 @@ class Gallery extends Component {
             numItems={gallery.galNumberItems} 
           />
           <GalleryLogo 
+            gallery={gallery.gallery_id}
             basePath={imgSrc} 
             onGalleryHover={this.handleGalleryHover}
           />
@@ -46,6 +47,7 @@ class Gallery extends Component {
           numItems={gallery.galNumberItems} 
         />
         <GalleryLogo 
+          gallery={gallery.gallery_id}
           basePath={imgSrc} 
           onGalleryHover={this.handleGalleryHover}
         />

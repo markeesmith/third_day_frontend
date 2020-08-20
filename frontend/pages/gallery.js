@@ -1,8 +1,9 @@
 import React from 'react';
-import Galleries from '../components/Galleries';
 
 const Gallery = () => (
-  <Galleries />
+  <h1>
+    Build individual galleries here. Read in query params?
+  </h1>
 );
 
 export default Gallery;

@@ -7,12 +7,9 @@ function optionText(option) {
 }
 
 const GalleryDropDown = ({dropDownChange, values, selectedOption}) => (
-  <GalleryDDStyles name="gallerySelect" onChange={dropDownChange}>
+  <GalleryDDStyles value={selectedOption} name="gallerySelect" onChange={dropDownChange}>
     {values.map(option => (
-      (option === selectedOption) ? 
-        <option value={option} selected>{optionText(option)}</option> 
-        : 
-        <option value={option}>{optionText(option)}</option>
+      <option value={option} key={option}>{optionText(option)}</option>
     ))}
   </GalleryDDStyles>
 );
