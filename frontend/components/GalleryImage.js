@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 
-const GalleryLogo = ( {gallery, basePath, onGalleryHover} ) => (
+const GalleryImage = ( {gallery, basePath, onGalleryHover} ) => (
   <Link href={{
     pathname: '/gallery',
     query: { id: gallery }
@@ -26,10 +26,10 @@ const GalleryLogo = ( {gallery, basePath, onGalleryHover} ) => (
   </Link>
 );
 
-GalleryLogo.propTypes = {
+GalleryImage.propTypes = {
     gallery: PropTypes.number.isRequired,
     basePath: PropTypes.string.isRequired,
     onGalleryHover: PropTypes.func.isRequired
 }
  
-export default GalleryLogo;
+export default GalleryImage;

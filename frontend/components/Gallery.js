@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClone } from '@fortawesome/free-solid-svg-icons'
 import GalleryStyles from './styles/GalleryStyles';
 import GalleryOverlay from './GalleryOverlay';
-import GalleryLogo from './GalleryLogo';
+import GalleryImage from './GalleryImage';
 
 class Gallery extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class Gallery extends Component {
             hovered={galleryHovered}
             numItems={gallery.galNumberItems} 
           />
-          <GalleryLogo 
+          <GalleryImage 
             gallery={gallery.gallery_id}
             basePath={imgSrc} 
             onGalleryHover={this.handleGalleryHover}
@@ -46,7 +46,7 @@ class Gallery extends Component {
           hovered={galleryHovered}
           numItems={gallery.galNumberItems} 
         />
-        <GalleryLogo 
+        <GalleryImage 
           gallery={gallery.gallery_id}
           basePath={imgSrc} 
           onGalleryHover={this.handleGalleryHover}

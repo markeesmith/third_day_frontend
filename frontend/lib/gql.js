@@ -23,6 +23,17 @@ const TYPE_GALLERIES_QUERY = gql`
     }
 `;
 
+const ID_GALLERIES_QUERY = gql`
+  query ID_GALLERIES_QUERY($searchTerm: Int!) {
+    galleries(where: {gallery_id: $searchTerm}) {
+      gallery_id
+      galNumberItems
+      galPath
+      galType
+    }
+  }
+`;
+
 const ALL_GALLERIES_QUERY = gql`
   query ALL_GALLERIES_QUERY {
     galleries {
@@ -34,9 +45,10 @@ const ALL_GALLERIES_QUERY = gql`
   }
 `;
 
-export { 
-    LOCAL_STATE_QUERY, 
-    TOGGLE_HAMBURGER_MUTATION,
-    TYPE_GALLERIES_QUERY,
-    ALL_GALLERIES_QUERY,
+export {
+  LOCAL_STATE_QUERY,
+  TOGGLE_HAMBURGER_MUTATION,
+  TYPE_GALLERIES_QUERY,
+  ID_GALLERIES_QUERY,
+  ALL_GALLERIES_QUERY,
 };
