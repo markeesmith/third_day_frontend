@@ -10,12 +10,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-              sh 'cd frontend && npm install'
+              sh 'npm install'
             }
         }
         stage('Test') {
             steps {
-                sh 'cd frontend && npm run test'
+                sh 'npm run test'
             }
         }
         stage('Deploy DEV') {
