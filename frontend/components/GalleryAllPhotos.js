@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import GalleryAllPhotosStyles from './styles/GalleryAllPhotosStyles'
+import GalleryAllMainImage from './GalleryAllMainImage'
 
 const basePath = process.env.NEXT_PUBLIC_S3_BASE_URL;
-const count = 0;
 
-function setPhotoURL(pos, gallery) {
-  return `${basePath + gallery.galPath + pos}-1280.jpg`;
+function setBasePhotoURL(gallery) {
+  return `${basePath + gallery.galPath}`;
 }
 
 class GalleryAllPhotos extends Component {
@@ -13,7 +14,8 @@ class GalleryAllPhotos extends Component {
     super(props);
     const { gallery } = this.props;
     this.state = {
-      mainURL: setPhotoURL(count, gallery),
+      mainURL: setBasePhotoURL(gallery),
+      count: 0,
     }
   }
 
@@ -21,9 +23,9 @@ class GalleryAllPhotos extends Component {
     // const { gallery } = this.props;
     const { mainURL } = this.state;
     return(
-      <div>
-        <h1>{mainURL}</h1>
-      </div>
+      <GalleryAllPhotosStyles>
+        <GalleryAllMainImage url={mainURL} />
+      </GalleryAllPhotosStyles>
     );
   }
 }
