@@ -26,14 +26,6 @@ pipeline {
                 echo 'Deploy Dev placeholder for DEV branch'
             }
         }
-        stage('Deploy TEST') {
-            when {
-                branch 'int'
-            }
-            steps {
-                echo 'Deploy Stage placeholder for INT branch'
-            }
-        }
         stage('Deploy PROD') {
             when {
                 branch 'master'
