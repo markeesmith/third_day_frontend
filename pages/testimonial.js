@@ -1,9 +1,8 @@
 import React from 'react';
+import Testimonials from '../components/Testimonials';
 
 const Testimonial = () => (
-  <div>
-    <h1>Testimonial Page</h1>
-  </div>
+  <Testimonials />
 );
 
 export default Testimonial;
