@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import FooterStyles from './styles/FooterStyles';
 import Logo from './Logo';
 
@@ -10,12 +10,12 @@ const isMobile = false;
 const Footer = () => (
   <FooterStyles mobile={isMobile}>
     <hr />
-    <div className='upper-wrapper'>
-      <div className='contact'>
+    <div className="upper-wrapper">
+      <div className="contact">
         <h2>Contact Us</h2>
-        <div className='logo'>
+        <div className="logo">
           <div>
-            <Logo imgSrc='static/logos/MainLogoMaroon.svg' pad={false} />
+            <Logo imgSrc="static/logos/MainLogoMaroon.svg" pad={false} />
           </div>
           <div>
             <p>
@@ -29,58 +29,56 @@ const Footer = () => (
           </div>
         </div>
       </div>
-      <div className='navigation'>
+      <div className="navigation">
         <h2>Navigation</h2>
-        <div className='navigation-submenu'>
+        <div className="navigation-submenu">
           <div>
             <div>
-              <Link href='/'>
+              <Link href="/">
                 <a>Home</a>
               </Link>
             </div>
             <div>
-              <Link href='/about'>
+              <Link href="/about">
                 <a>About</a>
               </Link>
-            </div>  
+            </div>
             <div>
-              <Link href='/galleries'>
+              <Link href="/galleries">
                 <a>Gallery</a>
               </Link>
             </div>
           </div>
           <div>
             <div>
-              <Link href='/testimonials'>
+              <Link href="/testimonials">
                 <a>Testimonials</a>
               </Link>
             </div>
             <div>
-              <Link href='/contact'>
+              <Link href="/contact">
                 <a>Contact</a>
               </Link>
             </div>
-          </div>                  
+          </div>
         </div>
       </div>
     </div>
     <hr />
-    <div className='lower-wrapper'>
+    <div className="lower-wrapper">
       <div>
-        <Link href='/'>
+        <Link href="/">
           <a>Privacy Policy</a>
         </Link>
-        <Link href='/'>
+        <Link href="/">
           <a>Terms of Use</a>
         </Link>
-        <Link href='/'>
+        <Link href="/">
           <a>Sitemap</a>
         </Link>
         <p>
           &copy; 2017-
-          {new Date().getFullYear()}
-          {' '}
-          &nbsp; Third Day Builders, LLC
+          {new Date().getFullYear()} &nbsp; Third Day Builders, LLC
         </p>
       </div>
     </div>

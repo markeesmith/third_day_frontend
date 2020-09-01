@@ -1,54 +1,54 @@
 import styled from 'styled-components';
 
 const OffScreenMenuStyles = styled.ul`
-    position: fixed;
-    top: 0;
-    right: 0;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    padding-inline-start: 0;
-    height: 100vh;
-    width: ${props => (props.open ? '100vw' : '0vw')};
-    
-    overflow: hidden;
-    opacity: ${props => (props.open ? 1 : 0)};
-    background-color: #501414;
-    z-index: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  height: 100vh;
+  width: ${(props) => (props.open ? '100vw' : '0vw')};
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  overflow: hidden;
+  opacity: ${(props) => (props.open ? 1 : 0)};
+  background-color: #501414;
+  z-index: 1;
 
-    transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    div:first-of-type {
-        height: 85vh;
-        width: 85vw;
-    }
+  transition: all 0.3s;
 
-    a {
-        display: block;
-        text-decoration: none;
-        color: white;
-        font-size: 3rem;
-        text-align: center;
-    }
+  div:first-of-type {
+    height: 85vh;
+    width: 85vw;
+  }
 
-    p {
-        color: white;
-        font-size: 1.8rem;
-        text-align: center;
-        margin: 0;
-        font-weight: bold;
-    }
+  a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+  }
 
-    p:nth-of-type(2) {
-        font-weight: normal;
-    }
+  p {
+    color: white;
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+  }
 
-    img {
-        max-height: 5rem;
-    }
+  p:nth-of-type(2) {
+    font-weight: normal;
+  }
+
+  img {
+    max-height: 5rem;
+  }
 `;
 
 export default OffScreenMenuStyles;

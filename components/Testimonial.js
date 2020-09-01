@@ -5,16 +5,14 @@ import TestimonialImage from './TestimonialImage';
 import TestimonialText from './TestimonialText';
 
 const TestimonialStyles = styled.div`
-  width: 100vw;
-
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 2fr;
 `;
 
-const Testimonial = ({testimonial}) => (
+const Testimonial = ({ testimonial }) => (
   <TestimonialStyles>
-    <TestimonialImage imgSrc='imgSrc'/>
-    <TestimonialText 
+    <TestimonialImage imgSrc="imgSrc" />
+    <TestimonialText
       headline={testimonial.headline}
       text={testimonial.body}
       name={testimonial.customer.firstName}
@@ -29,9 +27,9 @@ Testimonial.propTypes = {
     headline: PropTypes.string.isRequired,
     customer: PropTypes.shape({
       customer_id: PropTypes.number.isRequired,
-      firstName: PropTypes.string.isRequired
-    }).isRequired
-  }).isRequired
-}
+      firstName: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default Testimonial;

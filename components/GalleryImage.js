@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 
-const GalleryImage = ( {gallery, basePath, onGalleryHover} ) => (
-  <Link href={{
-    pathname: '/gallery',
-    query: { id: gallery }
-  }}
+const GalleryImage = ({ gallery, basePath, onGalleryHover }) => (
+  <Link
+    href={{
+      pathname: '/gallery',
+      query: { id: gallery },
+    }}
   >
     <a>
       <img
@@ -16,9 +17,9 @@ const GalleryImage = ( {gallery, basePath, onGalleryHover} ) => (
           ${basePath}0-1024.jpg 1024w,
           ${basePath}0-1280.jpg 1280w
           `}
-        sizes='100%'
+        sizes="100%"
         src={`${basePath}0-480.jpg 480w`}
-        alt='Main Gallery'
+        alt="Main Gallery"
         onMouseEnter={onGalleryHover}
         onMouseLeave={onGalleryHover}
       />
@@ -27,9 +28,9 @@ const GalleryImage = ( {gallery, basePath, onGalleryHover} ) => (
 );
 
 GalleryImage.propTypes = {
-    gallery: PropTypes.number.isRequired,
-    basePath: PropTypes.string.isRequired,
-    onGalleryHover: PropTypes.func.isRequired
-}
- 
+  gallery: PropTypes.number.isRequired,
+  basePath: PropTypes.string.isRequired,
+  onGalleryHover: PropTypes.func.isRequired,
+};
+
 export default GalleryImage;

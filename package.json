@@ -7,7 +7,9 @@
     "dev": "next -p 8000",
     "build": "next build",
     "start": "npm start",
-    "test": "jest"
+    "test": "jest",
+    "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
+    "lint": "eslint ."
   },
   "author": "Markee Smith",
   "license": "MIT",
@@ -50,7 +52,8 @@
     "eslint-plugin-react-hooks": "^4.0.8",
     "graphql-tools": "^6.1.0",
     "jest": "^26.1.0",
-    "jest-transform-graphql": "^2.1.0"
+    "jest-transform-graphql": "^2.1.0",
+    "prettier": "^2.1.1"
   },
   "jest": {
     "setupFilesAfterEnv": [

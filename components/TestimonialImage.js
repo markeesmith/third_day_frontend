@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TestimonialImage = ({imgSrc}) => (
+const TestimonialImage = ({ imgSrc }) => (
   <div>
     <h1>Testimonial Image</h1>
     <p>{imgSrc}</p>
@@ -9,7 +9,7 @@ const TestimonialImage = ({imgSrc}) => (
 );
 
 TestimonialImage.propTypes = {
-  imgSrc: PropTypes.string.isRequired
-}
+  imgSrc: PropTypes.string.isRequired,
+};
 
 export default TestimonialImage;

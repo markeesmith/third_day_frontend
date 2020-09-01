@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Logo from './Logo';
 import NavBarDesktopStyle from './styles/NavBarDesktopStyle';
 
-const NavBarDesktop = ({top}) => (
+const NavBarDesktop = ({ top }) => (
   <NavBarDesktopStyle top={top}>
     <div>
       <Link href="/">
@@ -20,12 +20,16 @@ const NavBarDesktop = ({top}) => (
         <a>Testimonials</a>
       </Link>
     </div>
-        
-    <Logo 
-      imgSrc={top ? 'static/logos/MainLogoWhite.svg' : 'static/logos/MainLogoMaroon.svg'}
+
+    <Logo
+      imgSrc={
+        top
+          ? 'static/logos/MainLogoWhite.svg'
+          : 'static/logos/MainLogoMaroon.svg'
+      }
       pad={false}
     />
-        
+
     <div>
       <Link href="/contact">
         <a>Contact</a>
@@ -35,7 +39,7 @@ const NavBarDesktop = ({top}) => (
 );
 
 NavBarDesktop.propTypes = {
-    top: PropTypes.bool.isRequired
-}
+  top: PropTypes.bool.isRequired,
+};
 
 export default NavBarDesktop;

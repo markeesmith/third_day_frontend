@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const GalleryAllPhotosStyles = styled.div`
   height: 110vh;
@@ -9,10 +9,10 @@ const GalleryAllPhotosStyles = styled.div`
   grid-template-rows: 4fr 1fr;
 
   img {
-        height: 100%;
-        object-fit: cover;
-        margin: 0 auto;
-    }
+    height: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+  }
 `;
 
 export default GalleryAllPhotosStyles;

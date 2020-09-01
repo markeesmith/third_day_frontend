@@ -6,7 +6,7 @@ import { LOCAL_STATE_QUERY, TOGGLE_HAMBURGER_MUTATION } from '../lib/gql';
 
 const OffScreenMenu = () => (
   <Mutation mutation={TOGGLE_HAMBURGER_MUTATION}>
-    {toggleHamburger => (
+    {(toggleHamburger) => (
       <Query query={LOCAL_STATE_QUERY}>
         {({ data }) => (
           <OffScreenMenuStyles open={data.hamburgerMenuOpen}>
@@ -38,11 +38,13 @@ const OffScreenMenu = () => (
               <p>We can&apos;t wait to hear about it!</p>
               <p>weaver.thirdday@gmail.com</p>
               <p>(304) 283-3863</p>
-              <p><img src='static/logos/MainLogoWhite.svg' alt='Logo' /></p>
+              <p>
+                <img src="static/logos/MainLogoWhite.svg" alt="Logo" />
+              </p>
             </div>
           </OffScreenMenuStyles>
         )}
-      </Query> 
+      </Query>
     )}
   </Mutation>
 );

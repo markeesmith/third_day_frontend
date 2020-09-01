@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import GalleryAllPhotosStyles from './styles/GalleryAllPhotosStyles'
-import GalleryAllMainImage from './GalleryAllMainImage'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import GalleryAllPhotosStyles from './styles/GalleryAllPhotosStyles';
+import GalleryAllMainImage from './GalleryAllMainImage';
 
 const basePath = process.env.NEXT_PUBLIC_S3_BASE_URL;
 
@@ -15,14 +15,14 @@ class GalleryAllPhotos extends Component {
     const { gallery } = this.props;
     this.state = {
       mainURL: setBasePhotoURL(gallery),
-      count: 0,
-    }
+      // count: 0,
+    };
   }
 
-  render(){
+  render() {
     // const { gallery } = this.props;
     const { mainURL } = this.state;
-    return(
+    return (
       <GalleryAllPhotosStyles>
         <GalleryAllMainImage url={mainURL} />
       </GalleryAllPhotosStyles>
@@ -35,8 +35,8 @@ GalleryAllPhotos.propTypes = {
     gallery_id: PropTypes.number.isRequired,
     galNumberItems: PropTypes.number.isRequired,
     galPath: PropTypes.string.isRequired,
-    galType: PropTypes.string.isRequired
-  }).isRequired
-}
+    galType: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default GalleryAllPhotos;

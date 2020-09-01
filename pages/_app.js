@@ -38,18 +38,18 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 class MyApp extends App {
-    render() {
-        const { Component, apollo } = this.props;
+  render() {
+    const { Component, apollo } = this.props;
 
-        return (
-          <ApolloProvider client={apollo}>
-            <Page>
-              <Component />
-              <GlobalStyle />
-            </Page>
-          </ApolloProvider>
-        );
-    }
+    return (
+      <ApolloProvider client={apollo}>
+        <Page>
+          <Component />
+          <GlobalStyle />
+        </Page>
+      </ApolloProvider>
+    );
+  }
 }
 
 export default withData(MyApp);
