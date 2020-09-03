@@ -10,21 +10,8 @@ const ContactFormStyles = styled.form`
   input[type='number'],
   input[type='tel'],
   #contactTextArea,
-  #contactEmail {
-    :focus {
-      border-color: #501414;
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #501414;
-      outline: 0 none;
-    }
-  }
-
-  input[type='text'],
-  input[type='number'],
-  input[type='tel'],
-  #contactTextArea,
   #contactEmail,
   #contactTextArea,
-  #contactZipCode,
   select {
     display: block;
     padding: 6px 12px;
@@ -48,7 +35,11 @@ const ContactFormStyles = styled.form`
     max-height: 50vh;
   }
 
-  #contactZipCode,
+  #contactZipCode {
+    display: inline-block;
+    width: 45%;
+  }
+
   select {
     display: inline-block;
     height: 7vh;
@@ -57,8 +48,6 @@ const ContactFormStyles = styled.form`
     color: rgb(73, 80, 87);
     border: 1px solid rgb(206, 212, 218);
     border-radius: 4px;
-
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s;
   }
 
   #zipState {
@@ -98,6 +87,19 @@ const ContactFormStyles = styled.form`
     width: 90%;
     margin: 10px auto;
     padding-left: 10px;
+  }
+
+  input[type='text'],
+  input[type='number'],
+  input[type='tel'],
+  #contactTextArea,
+  #contactEmail,
+  select {
+    :focus {
+      border-color: #501414;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #501414;
+      outline: 0 none;
+    }
   }
 `;
 
