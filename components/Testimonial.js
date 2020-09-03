@@ -6,7 +6,7 @@ import TestimonialText from './TestimonialText';
 
 const TestimonialStyles = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
 `;
 
 const Testimonial = ({ testimonial }) => (

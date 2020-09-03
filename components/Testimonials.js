@@ -1,5 +1,4 @@
 import React from 'react';
-// import styled from 'styled-components';
 import { Query } from 'react-apollo';
 import { ALL_TESTIMONIALS_QUERY } from '../lib/gql';
 import Testimonial from './Testimonial';
@@ -10,7 +9,7 @@ const Testimonials = () => (
       if (loading) return <p>Loading...</p>;
       if (error) return <p>Error: {error.message}</p>;
       return (
-        <div>
+        <div style={{ paddingTop: '25vh' }}>
           {data.testimonials.map((testimonial) => (
             <Testimonial
               testimonial={testimonial}

@@ -33,6 +33,7 @@ const ContactFormStyles = styled.form`
     height: 20vh;
     resize: vertical;
     max-height: 50vh;
+    min-height: 7vh;
   }
 
   #contactZipCode {
