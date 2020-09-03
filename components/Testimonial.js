@@ -11,7 +11,7 @@ const TestimonialStyles = styled.div`
 
 const Testimonial = ({ testimonial }) => (
   <TestimonialStyles>
-    <TestimonialImage imgSrc="imgSrc" />
+    <TestimonialImage imgSrc={testimonial.gallery.galPath} />
     <TestimonialText
       headline={testimonial.headline}
       text={testimonial.body}
@@ -29,6 +29,10 @@ Testimonial.propTypes = {
       customer_id: PropTypes.number.isRequired,
       firstName: PropTypes.string.isRequired,
     }).isRequired,
+    gallery: PropTypes.shape({
+      gallery_id: PropTypes.number.isRequired,
+      galPath: PropTypes.string.isRequired,
+    }),
   }).isRequired,
 };
 
