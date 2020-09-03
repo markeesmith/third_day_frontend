@@ -11,6 +11,21 @@ const ContactFormStyles = styled.form`
   input[type='tel'],
   #contactTextArea,
   #contactEmail {
+    :focus {
+      border-color: #501414;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #501414;
+      outline: 0 none;
+    }
+  }
+
+  input[type='text'],
+  input[type='number'],
+  input[type='tel'],
+  #contactTextArea,
+  #contactEmail,
+  #contactTextArea,
+  #contactZipCode,
+  select {
     display: block;
     padding: 6px 12px;
     margin: 10px auto;
