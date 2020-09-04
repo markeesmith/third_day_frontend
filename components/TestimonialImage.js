@@ -9,7 +9,7 @@ const TestimonialImageStyle = styled.div`
 
   img {
     max-width: 80%;
-    max-height: 100%;
+    max-height: 80%;
     width: auto;
     height: auto;
     position: absolute;
@@ -25,14 +25,7 @@ const basePath = process.env.NEXT_PUBLIC_S3_BASE_URL;
 
 const TestimonialImage = ({ imgSrc }) => (
   <TestimonialImageStyle>
-    <img
-      src={
-        !imgSrc
-          ? 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2534&q=80'
-          : `${basePath + imgSrc}0-1024.jpg`
-      }
-      alt="Testimonial"
-    />
+    <img src={`${basePath + imgSrc}0-1024.jpg`} alt="Testimonial" />
   </TestimonialImageStyle>
 );
 

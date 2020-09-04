@@ -1,24 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import TestimonialImage from './TestimonialImage';
-import TestimonialText from './TestimonialText';
+import TestimonialEntry from './TestimonialEntry';
 
-const TestimonialStyles = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-`;
+const Testimonial = ({ testimonial }) => {
+  const needHR = testimonial.testimonial_id > 1;
+  const imgLeft = testimonial.testimonial_id % 2 !== 0;
 
-const Testimonial = ({ testimonial }) => (
-  <TestimonialStyles>
-    <TestimonialImage imgSrc={testimonial.gallery.galPath} />
-    <TestimonialText
+  return (
+    <TestimonialEntry
+      hr={needHR}
+      imgLeft={imgLeft}
+      galPath={testimonial.gallery.galPath}
       headline={testimonial.headline}
-      text={testimonial.body}
+      body={testimonial.body}
       name={testimonial.customer.firstName}
     />
-  </TestimonialStyles>
-);
+  );
+};
 
 Testimonial.propTypes = {
   testimonial: PropTypes.shape({

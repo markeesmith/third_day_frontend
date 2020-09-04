@@ -7,8 +7,8 @@ import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 
 const TestimonialTextStyles = styled.div`
   width: 90%;
-  margin-right: 10%;
-  padding-left: 3vw;
+  ${({ imgLeft }) => (imgLeft ? 'margin-right: 10%' : 'margin-left: 10%')};
+  ${({ imgLeft }) => (imgLeft ? 'padding-left: 3vw' : 'padding-right: 3vw')};
   padding-top: 5vh;
   padding-bottom: 5vh;
 
@@ -30,8 +30,8 @@ const TestimonialTextStyles = styled.div`
 
 const InnerContainer = styled.div``;
 
-const TestimonialText = ({ headline, text, name }) => (
-  <TestimonialTextStyles>
+const TestimonialText = ({ headline, text, name, imgLeft }) => (
+  <TestimonialTextStyles imgLeft={imgLeft}>
     <InnerContainer>
       <FontAwesomeIcon icon={faQuoteLeft} size="2x" />
       <p id="headlineText">{headline}</p>
@@ -50,6 +50,11 @@ TestimonialText.propTypes = {
   headline: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  imgLeft: PropTypes.bool,
+};
+
+TestimonialText.defaultProps = {
+  imgLeft: true,
 };
 
 export default TestimonialText;
