@@ -1,11 +1,14 @@
 import React from 'react';
 import AboutStyles from './styles/AboutStyles';
 
+const imgSrc = `${process.env.NEXT_PUBLIC_S3_BASE_URL}jumbo/asset`;
+
 const AboutUs = () => {
   return (
     <AboutStyles>
       <div className="AboutBlock">
         <h1>About The Builder</h1>
+        <hr />
         <p>
           Kevin is a lifelong resident of historic Jefferson County, West
           Virginia. He is a second generation contractor with 35 years of
@@ -18,15 +21,26 @@ const AboutUs = () => {
       </div>
 
       <div className="AboutBlock">
-        <h1>Third Day Trailer Pic</h1>
+        <img
+          srcSet={`
+            ${imgSrc}4-480.jpg 480w,
+            ${imgSrc}4-767.jpg 767w,
+            ${imgSrc}4-1024.jpg 1024w,
+            ${imgSrc}4-1280.jpg 1280w
+            `}
+          sizes="100%"
+          src={`${imgSrc}4-480.jpg 480w`}
+          alt="Kevin Weaver and his trailer"
+        />
       </div>
 
       <div className="AboutBanner">
-        &quot;Home is where the story begins...&quot;
+        &quot;Home <span>is where the story begins...</span>&quot;
       </div>
 
       <div className="AboutBlock">
         <h1>Our Process</h1>
+        <hr />
         <p>
           We pride ourselves on building homes and projects with quality,
           integrity, and style. With Third Day Builders, we provide the unique
@@ -41,7 +55,8 @@ const AboutUs = () => {
       </div>
 
       <div className="AboutBlock">
-        <h1>Here&apos;s a Brief Overview of our Process</h1>
+        <h1>Overview of our Process</h1>
+        <hr />
         <ul>
           <li>
             <span className="ListName">Initial Contact: </span>The client can
