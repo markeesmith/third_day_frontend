@@ -1,9 +1,6 @@
 import React from 'react';
+import Home from '../components/Home';
 
-const Home = () => (
-  <div>
-    <h1>Home Page</h1>
-  </div>
-);
+const Index = () => <Home />;
 
-export default Home;
+export default Index;

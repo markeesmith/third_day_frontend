@@ -39,7 +39,7 @@ const AboutUs = () => {
       </div>
 
       <div className="AboutBlock">
-        <h1>Our Process</h1>
+        <h1>Our Commitment</h1>
         <hr />
         <p>
           We pride ourselves on building homes and projects with quality,

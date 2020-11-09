@@ -7,12 +7,14 @@ import TestimonialText from './TestimonialText';
 const TestimonialStyles = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  width: 80%;
+  margin: 0 auto;
 `;
 
 const HR = styled.hr`
   border: none;
   height: 1px;
-  width: 90vw;
+  width: 80%;
   color: #501414;
   background-color: #501414;
   margin: 2vh auto;

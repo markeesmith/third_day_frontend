@@ -5,6 +5,8 @@ const ContactFormStyles = styled.form`
 
   display: grid;
   grid-template-columns: 1fr 1fr;
+  width: 80vw;
+  margin: 0 auto;
 
   input[type='text'],
   input[type='number'],
