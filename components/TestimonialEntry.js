@@ -17,7 +17,7 @@ const HR = styled.hr`
   width: 80%;
   color: #501414;
   background-color: #501414;
-  margin: 2vh auto;
+  margin: 4vh auto;
 `;
 
 const TestimonialEntry = ({ hr, imgLeft, galPath, headline, body, name }) => {

@@ -8,8 +8,8 @@ const TestimonialImageStyle = styled.div`
   margin-left: 10%;
 
   img {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 100%;
+    max-height: 100%;
     width: auto;
     height: auto;
     position: absolute;
@@ -18,6 +18,7 @@ const TestimonialImageStyle = styled.div`
     left: 0;
     right: 0;
     margin: auto;
+    border: 1px solid #501414;
   }
 `;
 

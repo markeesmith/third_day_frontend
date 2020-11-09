@@ -30,66 +30,78 @@ const HomeStyles = styled.div`
     background-color: #501414;
     color: white;
 
-    padding-bottom: 5vh;
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    button {
+      background-color: #f6f1ea;
+      color: #501414;
+
+      display: inline-block;
+      font-weight: 400;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      border: 1px solid transparent;
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: 0.25rem;
+      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+      padding: 0.5rem 1rem;
+      font-size: 2rem;
+      line-height: 1.5;
+      border-radius: 0.3rem;
+    }
+
+    .btn:focus,
+    .btn:hover {
+      text-decoration: none;
+    }
+    .btn.focus,
+    .btn:focus {
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    button:hover {
+      background-color: #501414;
+      color: #f6f1ea;
+      cursor: pointer;
+    }
+
+    button:focus,
+    button:hover {
+      box-shadow: 0 0 3px #f6f1ea;
+    }
   }
 
   .CardSpan {
     grid-column: 1 / -1;
     text-align: center;
+
+    margin: 3vh 0 5vh 0;
   }
 
   .Card {
     text-align: center;
     width: 70%;
     margin: 0 auto;
-  }
 
-  button {
-    background-color: #f6f1ea;
-    color: #501414;
+    h2 {
+      font-size: 3rem;
+    }
 
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-
-    padding: 0.5rem 1rem;
-    font-size: 2rem;
-    line-height: 1.5;
-    border-radius: 0.3rem;
-  }
-
-  .btn:focus,
-  .btn:hover {
-    text-decoration: none;
-  }
-  .btn.focus,
-  .btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-  }
-
-  button:hover {
-    background-color: #501414;
-    color: #f6f1ea;
-    cursor: pointer;
-  }
-
-  button:focus,
-  button:hover {
-    box-shadow: 0 0 3px #f6f1ea;
+    p {
+      font-size: 2rem;
+    }
   }
 
   .PhotoAreaTextOverlay {
@@ -115,7 +127,7 @@ const HomeStyles = styled.div`
       margin: 0;
       padding: 0;
       color: white;
-      font-size: 3vw;
+      font-size: 6rem;
     }
 
     img {
