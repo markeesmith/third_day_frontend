@@ -7,6 +7,7 @@ import {
   faExchangeAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import HomeStyles from './styles/HomeStyles';
+import Slideshow from './Slideshow';
 
 const imgSrc = `${process.env.NEXT_PUBLIC_S3_BASE_URL}jumbo/asset2`;
 
@@ -23,9 +24,7 @@ const Home = () => {
             attention in order to help you build the home of your dreams.
           </p>
         </div>
-        <div>
-          <p>Slideshow Placeholder</p>
-        </div>
+        <Slideshow />
       </div>
       <div className="CardArea">
         <div className="CardSpan">

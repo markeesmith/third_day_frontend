@@ -10,8 +10,17 @@ const HomeStyles = styled.div`
   .TextSlideContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    min-height: 40vh;
 
-    text-align: center;
+    p {
+      font-size: 2.25rem;
+      text-align: center;
+    }
+
+    div:first-of-type {
+      width: 80%;
+      margin: auto auto;
+    }
   }
 
   .CardArea {
