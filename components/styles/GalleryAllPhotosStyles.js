@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
 const GalleryAllPhotosStyles = styled.div`
-  /* TODO: Adjust this!!! */
-  /* height: 50vh; */
   padding-top: 20vh;
 
   display: grid;
   grid-template-columns: 4fr 1fr;
+  overflow: hidden;
 
   div:first-of-type {
     margin: auto auto;

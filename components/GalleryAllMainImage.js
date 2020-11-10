@@ -1,24 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const GalleryAllMainImage = ({ url }) => (
+const GalleryAllMainImage = ({ url, position }) => (
   <div>
-    <img
-      srcSet={`
-      ${url}0-480.jpg 480w,
-      ${url}0-767.jpg 767w,
-      ${url}0-1024.jpg 1024w,
-      ${url}0-1280.jpg 1280w
-      `}
-      sizes="100%"
-      src={`${url}0-480.jpg 480w`}
-      alt="Main Gallery"
-    />
+    <img sizes="100%" src={`${url}${position}-1024.jpg`} alt="Main Gallery" />
   </div>
 );
 
 GalleryAllMainImage.propTypes = {
   url: PropTypes.string.isRequired,
+  position: PropTypes.number.isRequired,
 };
 
 export default GalleryAllMainImage;

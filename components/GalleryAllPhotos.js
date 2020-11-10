@@ -16,16 +16,15 @@ class GalleryAllPhotos extends Component {
     const { gallery } = this.props;
     this.state = {
       mainURL: setBasePhotoURL(gallery),
-      // count: 0,
+      currPhoto: 0,
     };
   }
 
   render() {
-    // const { gallery } = this.props;
-    const { mainURL } = this.state;
+    const { mainURL, currPhoto } = this.state;
     return (
       <GalleryAllPhotosStyles>
-        <GalleryAllMainImage url={mainURL} />
+        <GalleryAllMainImage url={mainURL} position={currPhoto} />
         <GalleryPicker />
       </GalleryAllPhotosStyles>
     );
