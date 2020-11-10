@@ -123,7 +123,6 @@ const HomeStyles = styled.div`
     }
 
     .Text-Container > p {
-      /* font-family: 'Playfair Display SC', sans-serif; */
       margin: 0;
       padding: 0;
       color: white;

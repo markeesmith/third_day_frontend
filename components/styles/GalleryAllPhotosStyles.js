@@ -1,17 +1,22 @@
 import styled from 'styled-components';
 
 const GalleryAllPhotosStyles = styled.div`
-  height: 110vh;
+  /* TODO: Adjust this!!! */
+  /* height: 50vh; */
   padding-top: 20vh;
 
   display: grid;
-  grid-template-columns: 12fr;
-  grid-template-rows: 4fr 1fr;
+  grid-template-columns: 4fr 1fr;
+
+  div:first-of-type {
+    margin: auto auto;
+  }
 
   img {
+    width: auto;
     height: 100%;
     object-fit: cover;
-    margin: 0 auto;
+    max-height: 80vh;
   }
 `;
 

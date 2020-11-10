@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import GalleryAllPhotosStyles from './styles/GalleryAllPhotosStyles';
 import GalleryAllMainImage from './GalleryAllMainImage';
+import GalleryPicker from './GalleryPicker';
 
 const basePath = process.env.NEXT_PUBLIC_S3_BASE_URL;
 
@@ -25,6 +26,7 @@ class GalleryAllPhotos extends Component {
     return (
       <GalleryAllPhotosStyles>
         <GalleryAllMainImage url={mainURL} />
+        <GalleryPicker />
       </GalleryAllPhotosStyles>
     );
   }
