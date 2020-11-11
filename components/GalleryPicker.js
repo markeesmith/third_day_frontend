@@ -1,16 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import GalleryPickerStyles from './styles/GalleryPickerStyles';
+import GalleryPickerItem from './GalleryPickerItem';
 
-const GalleryPicker = () => {
+const GalleryPicker = ({ url, max, onPickerSelection }) => {
   return (
     <GalleryPickerStyles>
-      <p>Gallery Picker 1</p>
-      <p>Gallery Picker 2</p>
-      <p>Gallery Picker 3</p>
-      <p>Gallery Picker 4</p>
-      <p>Gallery Picker 5</p>
+      {[...Array(max)].map((pos, i) => (
+        <GalleryPickerItem
+          key={i + 1}
+          url={url}
+          photo={i}
+          onPickerSelection={onPickerSelection}
+        />
+      ))}
     </GalleryPickerStyles>
   );
+};
+
+GalleryPicker.propTypes = {
+  url: PropTypes.string.isRequired,
+  max: PropTypes.number.isRequired,
+  onPickerSelection: PropTypes.func.isRequired,
 };
 
 export default GalleryPicker;

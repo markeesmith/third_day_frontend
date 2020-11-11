@@ -9,7 +9,7 @@ const NavBarDesktop = styled.ul`
   padding-inline-start: 0;
   background-color: ${(props) => (props.top ? 'transparent' : 'white')};
   padding-top: ${(props) => (props.top ? '5vh' : '0')};
-  height: ${(props) => (props.top ? '20vh' : '15vh')};
+  height: ${(props) => (props.top ? '15vh' : '10vh')};
 
   display: flex;
   justify-content: space-between;

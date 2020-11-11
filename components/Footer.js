@@ -51,7 +51,7 @@ const Footer = () => (
           </div>
           <div>
             <div>
-              <Link href="/testimonials">
+              <Link href="/testimonial">
                 <a>Testimonials</a>
               </Link>
             </div>

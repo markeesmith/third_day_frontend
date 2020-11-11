@@ -14,18 +14,30 @@ class GalleryAllPhotos extends Component {
   constructor(props) {
     super(props);
     const { gallery } = this.props;
+    this.handlePickerSelection = this.handlePickerSelection.bind(this);
     this.state = {
       mainURL: setBasePhotoURL(gallery),
       currPhoto: 0,
+      maxPhotos: gallery.galNumberItems,
     };
   }
 
+  handlePickerSelection(selection) {
+    this.setState(() => ({
+      currPhoto: selection,
+    }));
+  }
+
   render() {
-    const { mainURL, currPhoto } = this.state;
+    const { mainURL, currPhoto, maxPhotos } = this.state;
     return (
       <GalleryAllPhotosStyles>
         <GalleryAllMainImage url={mainURL} position={currPhoto} />
-        <GalleryPicker />
+        <GalleryPicker
+          url={mainURL}
+          max={maxPhotos}
+          onPickerSelection={this.handlePickerSelection}
+        />
       </GalleryAllPhotosStyles>
     );
   }
