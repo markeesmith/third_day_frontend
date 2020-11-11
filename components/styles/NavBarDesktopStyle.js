@@ -10,6 +10,7 @@ const NavBarDesktop = styled.ul`
   background-color: ${(props) => (props.top ? 'transparent' : 'white')};
   padding-top: ${(props) => (props.top ? '5vh' : '0')};
   height: ${(props) => (props.top ? '15vh' : '10vh')};
+  width: 100%;
 
   display: flex;
   justify-content: space-between;

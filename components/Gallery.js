@@ -27,7 +27,7 @@ class Gallery extends Component {
     if (gallery.galNumberItems > 1) {
       return (
         <GalleryStyles>
-          <FontAwesomeIcon className="picture-icon" icon={faClone} />
+          <FontAwesomeIcon className="picture-icon" icon={faClone} size="3x" />
           <GalleryOverlay
             hovered={galleryHovered}
             numItems={gallery.galNumberItems}

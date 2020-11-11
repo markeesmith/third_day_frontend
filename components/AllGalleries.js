@@ -3,12 +3,11 @@ import styled from 'styled-components';
 import { Query } from 'react-apollo';
 import Gallery from './Gallery';
 import GalleryDropDown from './GalleryDropDown';
+import JumboText from './JumboText';
 import { ALL_GALLERIES_QUERY, TYPE_GALLERIES_QUERY } from '../lib/gql';
 
 const Center = styled.div`
   text-align: center;
-  /* TODO: Get rid of this */
-  padding-top: 25vh;
 `;
 
 const GalleryList = styled.div`
@@ -53,6 +52,10 @@ class AllGalleries extends Component {
     const ddlValues = ['all', 'home', 'addition', 'remodel'];
     return (
       <Center>
+        <JumboText
+          title="Gallery of Homes, Additions, and Remodels"
+          body="View the expert craftsmanship provided by Third Day Builders"
+        />
         <Query query={whichQuery} variables={{ searchTerm: gallerySelection }}>
           {({ data, loading, error }) => {
             if (loading) return <p>Loading...</p>;

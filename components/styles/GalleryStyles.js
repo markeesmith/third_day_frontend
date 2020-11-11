@@ -13,7 +13,6 @@ const GalleryStyles = styled.div`
     padding-right: 1.5vw;
     color: white;
     font-weight: bolder;
-    font-size: 3.75rem;
     pointer-events: none;
     fill: white;
     z-index: 1;

@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 const ContactFormStyles = styled.form`
-  padding-top: 25vh;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 80vw;
