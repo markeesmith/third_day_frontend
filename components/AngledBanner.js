@@ -15,22 +15,23 @@ const AngledBannerStyles = styled.div`
   h1 {
     margin-block-end: 0;
     margin-block-start: 0;
+    font-size: ${(props) => props.font};
   }
 
   .Caret {
-    /* position: absolute; */
     z-index: 100;
     color: ${(props) => props.backColor};
     margin-top: -53px;
   }
 `;
 
-const AngledBanner = ({ text, height, foreColor, backColor }) => {
+const AngledBanner = ({ text, height, foreColor, backColor, font }) => {
   return (
     <AngledBannerStyles
       height={height}
       foreColor={foreColor}
       backColor={backColor}
+      font={font}
     >
       <h1>{text}</h1>
       <FontAwesomeIcon className="Caret" icon={faCaretDown} size="8x" />

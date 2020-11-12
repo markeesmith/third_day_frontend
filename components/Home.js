@@ -23,6 +23,7 @@ const Home = () => {
         height="10vh"
         foreColor="white"
         backColor="#501414"
+        font="3.5rem"
       />
       <HomeStyles>
         <div className="TextSlideContainer">
