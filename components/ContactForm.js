@@ -5,7 +5,7 @@ import JumboText from './JumboText';
 const ContactForm = () => (
   <div>
     <JumboText
-      title="Contact Thid Day Builders"
+      title="Contact Third Day Builders"
       body="Let's begin building your dream home"
     />
     <ContactFormStyles>

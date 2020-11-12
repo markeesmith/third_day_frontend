@@ -21,8 +21,8 @@ const NavBarDesktop = styled.ul`
   a {
     text-decoration: none;
     color: ${(props) => (props.top ? 'white' : '#501414')};
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 2.25rem;
+    font-weight: bolder;
     font-family: 'FuturaPT-Light';
   }
 

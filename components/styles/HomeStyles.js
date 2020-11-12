@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
 const HomeStyles = styled.div`
-  /* Remove this!!! */
-  padding-top: 25vh;
-
   width: 80%;
   margin: 0 auto;
 
