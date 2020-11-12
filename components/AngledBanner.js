@@ -44,6 +44,7 @@ AngledBanner.propTypes = {
   height: PropTypes.string.isRequired,
   foreColor: PropTypes.string.isRequired,
   backColor: PropTypes.string.isRequired,
+  font: PropTypes.string.isRequired,
 };
 
 export default AngledBanner;
