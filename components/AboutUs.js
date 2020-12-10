@@ -7,11 +7,7 @@ const imgSrc = `${process.env.NEXT_PUBLIC_S3_BASE_URL}jumbo/asset`;
 const AboutUs = () => {
   return (
     <div>
-      <JumboImg
-        title="About Third Day Builders"
-        imgSrc={`${imgSrc}3`}
-        height="65vh"
-      />
+      <JumboImg imgSrc={`${imgSrc}3`} height="65vh" />
       <AboutStyles>
         <div className="AboutBlock">
           <h1>About The Builder</h1>

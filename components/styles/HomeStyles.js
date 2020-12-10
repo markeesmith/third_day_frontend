@@ -12,6 +12,10 @@ const HomeStyles = styled.div`
     p {
       font-size: 2.25rem;
       text-align: center;
+
+      span {
+        font-weight: bolder;
+      }
     }
 
     div:first-of-type {

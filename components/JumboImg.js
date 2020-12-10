@@ -7,16 +7,6 @@ const JumboImgStyles = styled.div`
   height: ${(props) => props.height};
   width: 100%;
   background-color: #501414;
-  color: white;
-
-  h1 {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    font-size: 5rem;
-    z-index: 100;
-  }
 
   img {
     position: absolute;
@@ -28,10 +18,9 @@ const JumboImgStyles = styled.div`
   }
 `;
 
-const JumboImg = ({ title, imgSrc, height }) => {
+const JumboImg = ({ imgSrc, height }) => {
   return (
     <JumboImgStyles height={height}>
-      <h1>{title}</h1>
       <img
         srcSet={`
         ${imgSrc}-480.jpg 480w,
@@ -48,7 +37,6 @@ const JumboImg = ({ title, imgSrc, height }) => {
 };
 
 JumboImg.propTypes = {
-  title: PropTypes.string.isRequired,
   imgSrc: PropTypes.string.isRequired,
   height: PropTypes.string.isRequired,
 };

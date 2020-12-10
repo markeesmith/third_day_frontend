@@ -17,7 +17,7 @@ const assetSrc = `${process.env.NEXT_PUBLIC_S3_BASE_URL}jumbo/asset2`;
 const Home = () => {
   return (
     <div>
-      <JumboImg title="Third Day Builders" imgSrc={homeSrc} height="75vh" />
+      <JumboImg imgSrc={homeSrc} height="75vh" />
       <AngledBanner
         text="Begin building your dream home today!"
         height="10vh"
@@ -31,8 +31,9 @@ const Home = () => {
             <p>
               Third Day Builders is soley owned and operated by Kevin Weaver. We
               are a company stationed in Jefferson County, WV and specialize in
-              building custom homes, building additions, and remodeling homes.
-              Our mission is to provide ample amounts of experience, skill, and
+              building <span>custom homes</span>, building{' '}
+              <span>additions</span>, and <span>remodeling</span> homes. Our
+              mission is to provide ample amounts of experience, skill, and
               attention in order to help you build the home of your dreams.
             </p>
           </div>
