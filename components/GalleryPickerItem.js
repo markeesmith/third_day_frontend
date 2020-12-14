@@ -14,10 +14,23 @@ const GalleryPickerItemStyles = styled.div`
   }
 `;
 
+function keyPress(event, f, pos) {
+  if (event.charCode === 13) {
+    f(pos);
+  }
+}
+
 const GalleryPickerItem = ({ url, photo, onPickerSelection }) => {
   return (
     <GalleryPickerItemStyles>
-      <a>
+      <a
+        onClick={() => onPickerSelection(photo)}
+        role="button"
+        tabIndex={photo}
+        onKeyPress={(e) => {
+          keyPress(e, onPickerSelection, photo);
+        }}
+      >
         <img sizes="100%" src={`${url}${photo}-1024.jpg`} alt="Main Gallery" />
       </a>
     </GalleryPickerItemStyles>
