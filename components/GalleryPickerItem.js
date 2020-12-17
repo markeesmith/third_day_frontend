@@ -11,6 +11,10 @@ const GalleryPickerItemStyles = styled.div`
   img {
     height: 100%;
     width: auto;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
   }
 `;
 
