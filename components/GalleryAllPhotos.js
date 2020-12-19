@@ -28,9 +28,14 @@ class GalleryAllPhotos extends Component {
 
   componentDidMount() {
     this.focusDiv.current.focus();
+    window.scrollTo(0, 45);
   }
 
   handleArrows(event) {
+    if (event.keyCode === 38 || event.keyCode === 40) {
+      event.preventDefault();
+    }
+
     if (event.keyCode === 37 || event.keyCode === 38) {
       const { currPhoto, maxPhotos } = this.state;
       const pos = currPhoto - 1;
@@ -45,7 +50,6 @@ class GalleryAllPhotos extends Component {
         });
       }
     } else if (event.keyCode === 39 || event.keyCode === 40) {
-      event.preventDefault();
       const { currPhoto, maxPhotos } = this.state;
       const pos = currPhoto + 1;
 
@@ -70,18 +74,20 @@ class GalleryAllPhotos extends Component {
   render() {
     const { mainURL, currPhoto, maxPhotos } = this.state;
     return (
-      <GalleryAllPhotosStyles
-        tabIndex={-1}
-        ref={this.focusDiv}
-        onKeyDown={this.handleArrows}
-      >
-        <GalleryAllMainImage url={mainURL} position={currPhoto} />
-        <GalleryPicker
-          url={mainURL}
-          max={maxPhotos}
-          onPickerSelection={this.handlePickerSelection}
-        />
-      </GalleryAllPhotosStyles>
+      <div>
+        <GalleryAllPhotosStyles
+          tabIndex={-1}
+          ref={this.focusDiv}
+          onKeyDown={this.handleArrows}
+        >
+          <GalleryAllMainImage url={mainURL} position={currPhoto} />
+          <GalleryPicker
+            url={mainURL}
+            max={maxPhotos}
+            onPickerSelection={this.handlePickerSelection}
+          />
+        </GalleryAllPhotosStyles>
+      </div>
     );
   }
 }

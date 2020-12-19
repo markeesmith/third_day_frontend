@@ -5,7 +5,7 @@ const GalleryAllPhotosStyles = styled.div`
   padding-top: 20vh;
 
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 4fr 2fr;
   overflow: hidden;
 
   div:first-of-type {

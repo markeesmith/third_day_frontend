@@ -35,7 +35,9 @@ const Meta = () => (
       type="text/css"
       href="/static/styles/nprogress.css"
     />
-    <title>Third Day Builders</title>
+    <title>
+      Third Day Builders - Building Custom Homes in the Charles Town, WV area
+    </title>
   </Head>
 );
 

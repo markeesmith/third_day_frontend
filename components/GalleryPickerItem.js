@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -24,22 +24,40 @@ function keyPress(event, f, pos) {
   }
 }
 
-const GalleryPickerItem = ({ url, photo, onPickerSelection }) => {
-  return (
-    <GalleryPickerItemStyles>
-      <a
-        onClick={() => onPickerSelection(photo)}
-        role="button"
-        tabIndex={photo}
-        onKeyPress={(e) => {
-          keyPress(e, onPickerSelection, photo);
-        }}
-      >
-        <img sizes="100%" src={`${url}${photo}-1024.jpg`} alt="Main Gallery" />
-      </a>
-    </GalleryPickerItemStyles>
-  );
-};
+class GalleryPickerItem extends Component {
+  constructor(props) {
+    super(props);
+
+    this.focusDiv = React.createRef();
+  }
+
+  componentDidMount() {
+    if (this.focusDiv.current !== null) this.focusDiv.current.focus();
+  }
+
+  render() {
+    const { url, photo, onPickerSelection } = this.props;
+
+    return (
+      <GalleryPickerItemStyles>
+        <a
+          onClick={() => onPickerSelection(photo)}
+          role="button"
+          tabIndex={0}
+          onKeyPress={(e) => {
+            keyPress(e, onPickerSelection, photo);
+          }}
+        >
+          <img
+            sizes="100%"
+            src={`${url}${photo}-1024.jpg`}
+            alt="Main Gallery"
+          />
+        </a>
+      </GalleryPickerItemStyles>
+    );
+  }
+}
 
 GalleryPickerItem.propTypes = {
   url: PropTypes.string.isRequired,
