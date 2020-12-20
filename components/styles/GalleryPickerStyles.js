@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 const GalleryPickerStyles = styled.div`
-  height: 100%;
+  height: 80vh;
   width: 100%;
-  max-height: 80vh;
   overflow-y: scroll;
 `;
 

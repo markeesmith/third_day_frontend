@@ -13,10 +13,9 @@ const GalleryAllPhotosStyles = styled.div`
   }
 
   img {
-    width: auto;
-    height: 100%;
-    object-fit: cover;
-    max-height: 80vh;
+    height: 80vh;
+    width: 100%;
+    object-fit: contain;
   }
 `;
 

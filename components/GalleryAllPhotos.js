@@ -93,6 +93,7 @@ class GalleryAllPhotos extends Component {
   handlePickerSelection(selection) {
     this.setState(() => ({
       currPhoto: selection,
+      scrollPos: selection > 1 ? (selection - 2) * convertToPix(1) : 0,
     }));
   }
 
