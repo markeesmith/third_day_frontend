@@ -20,7 +20,7 @@ class GalleryPicker extends Component {
   }
 
   render() {
-    const { url, max, onPickerSelection } = this.props;
+    const { url, max, onPickerSelection, currPhoto } = this.props;
     return (
       <GalleryPickerStyles ref={this.scrollDiv}>
         {[...Array(max)].map((pos, i) => (
@@ -29,6 +29,7 @@ class GalleryPicker extends Component {
             url={url}
             photo={i}
             onPickerSelection={onPickerSelection}
+            currPhoto={currPhoto}
           />
         ))}
       </GalleryPickerStyles>
@@ -41,6 +42,7 @@ GalleryPicker.propTypes = {
   max: PropTypes.number.isRequired,
   onPickerSelection: PropTypes.func.isRequired,
   scrollPos: PropTypes.number.isRequired,
+  currPhoto: PropTypes.number.isRequired,
 };
 
 export default GalleryPicker;

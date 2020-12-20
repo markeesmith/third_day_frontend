@@ -17,6 +17,10 @@ const GalleryPickerItemStyles = styled.div`
     -moz-user-drag: none;
     -o-user-drag: none;
   }
+
+  #selectedPhoto {
+    border: 4px solid #501414;
+  }
 `;
 
 function keyPress(event, f, pos) {
@@ -25,7 +29,28 @@ function keyPress(event, f, pos) {
   }
 }
 
-const GalleryPickerItem = ({ url, photo, onPickerSelection }) => {
+const GalleryPickerItem = ({ url, photo, onPickerSelection, currPhoto }) => {
+  if (photo === currPhoto) {
+    return (
+      <GalleryPickerItemStyles>
+        <a
+          onClick={() => onPickerSelection(photo)}
+          role="button"
+          tabIndex={0}
+          onKeyPress={(e) => {
+            keyPress(e, onPickerSelection, photo);
+          }}
+        >
+          <img
+            id="selectedPhoto"
+            sizes="100%"
+            src={`${url}${photo}-1024.jpg`}
+            alt="Main Gallery"
+          />
+        </a>
+      </GalleryPickerItemStyles>
+    );
+  }
   return (
     <GalleryPickerItemStyles>
       <a
@@ -46,6 +71,7 @@ GalleryPickerItem.propTypes = {
   url: PropTypes.string.isRequired,
   photo: PropTypes.number.isRequired,
   onPickerSelection: PropTypes.func.isRequired,
+  currPhoto: PropTypes.number.isRequired,
 };
 
 export default GalleryPickerItem;

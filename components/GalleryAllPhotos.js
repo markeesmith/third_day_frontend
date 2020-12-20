@@ -112,6 +112,7 @@ class GalleryAllPhotos extends Component {
             max={maxPhotos}
             onPickerSelection={this.handlePickerSelection}
             scrollPos={scrollPos}
+            currPhoto={currPhoto}
           />
         </GalleryAllPhotosStyles>
       </div>
