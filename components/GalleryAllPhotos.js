@@ -33,7 +33,7 @@ class GalleryAllPhotos extends Component {
 
   componentDidMount() {
     this.focusDiv.current.focus();
-    window.scrollTo(0, 45);
+    window.scrollTo(0, window.innerHeight * 0.08);
   }
 
   handleArrows(event) {

@@ -8,6 +8,7 @@ const GalleryImage = ({ gallery, basePath, onGalleryHover }) => (
       pathname: '/gallery',
       query: { id: gallery },
     }}
+    scroll={false}
   >
     <a>
       <img
