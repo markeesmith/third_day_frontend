@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import TestimonialEntry from './TestimonialEntry';
 
 const Testimonial = ({ testimonial }) => {
-  const needHR = testimonial.testimonial_id > 1;
+  const needHR = testimonial.testimonial_id !== 3;
   const imgLeft = testimonial.testimonial_id % 2 !== 0;
 
   return (
