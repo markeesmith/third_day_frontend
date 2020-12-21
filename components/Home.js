@@ -11,7 +11,7 @@ import JumboImg from './JumboImg';
 import AngledBanner from './AngledBanner';
 import Slideshow from './Slideshow';
 
-const homeSrc = `${process.env.NEXT_PUBLIC_S3_BASE_URL}gallery/homes/home2/0`;
+const homeSrc = `${process.env.NEXT_PUBLIC_S3_BASE_URL}jumbo/asset8`;
 const assetSrc = `${process.env.NEXT_PUBLIC_S3_BASE_URL}jumbo/asset2`;
 
 const Home = () => {
