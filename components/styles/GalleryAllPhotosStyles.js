@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const GalleryAllPhotosStyles = styled.div`
   outline: none;
-  padding-top: 20vh;
 
   display: grid;
   grid-template-columns: 4fr 2fr;

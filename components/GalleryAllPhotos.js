@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import GalleryAllPhotosStyles from './styles/GalleryAllPhotosStyles';
 import GalleryAllMainImage from './GalleryAllMainImage';
 import GalleryPicker from './GalleryPicker';
 
 const basePath = process.env.NEXT_PUBLIC_S3_BASE_URL;
+
+const SpacingDiv = styled.div`
+  height: 20vh;
+  background-color: ${(props) => (props.top ? '#501414' : 'transparent')};
+  transition: all 0.3s;
+
+  margin-bottom: 3vh;
+`;
 
 function convertToPix(dir) {
   return dir * (window.innerHeight * 0.9 * 0.2);
@@ -19,6 +28,7 @@ class GalleryAllPhotos extends Component {
     super(props);
     const { gallery } = this.props;
 
+    this.handleScroll = this.handleScroll.bind(this);
     this.handleArrows = this.handleArrows.bind(this);
     this.handlePickerSelection = this.handlePickerSelection.bind(this);
     this.focusDiv = React.createRef();
@@ -28,12 +38,23 @@ class GalleryAllPhotos extends Component {
       currPhoto: 0,
       maxPhotos: gallery.galNumberItems,
       pickerScrollPos: 0,
+      topOfPage: true,
     };
   }
 
   componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
     this.focusDiv.current.focus();
     window.scrollTo(0, window.innerHeight * 0.08);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll() {
+    if (window.scrollY > 30) this.setState({ topOfPage: false });
+    else this.setState({ topOfPage: true });
   }
 
   handleArrows(event) {
@@ -98,9 +119,16 @@ class GalleryAllPhotos extends Component {
   }
 
   render() {
-    const { mainURL, currPhoto, maxPhotos, pickerScrollPos } = this.state;
+    const {
+      mainURL,
+      currPhoto,
+      maxPhotos,
+      pickerScrollPos,
+      topOfPage,
+    } = this.state;
     return (
       <div>
+        <SpacingDiv top={topOfPage} />
         <GalleryAllPhotosStyles
           tabIndex={-1}
           ref={this.focusDiv}
