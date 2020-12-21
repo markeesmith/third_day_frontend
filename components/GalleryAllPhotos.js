@@ -27,7 +27,7 @@ class GalleryAllPhotos extends Component {
       mainURL: setBasePhotoURL(gallery),
       currPhoto: 0,
       maxPhotos: gallery.galNumberItems,
-      scrollPos: 0,
+      pickerScrollPos: 0,
     };
   }
 
@@ -42,7 +42,7 @@ class GalleryAllPhotos extends Component {
     }
 
     if (event.keyCode === 37 || event.keyCode === 38) {
-      const { currPhoto, maxPhotos, scrollPos } = this.state;
+      const { currPhoto, maxPhotos, pickerScrollPos } = this.state;
       const pos = currPhoto - 1;
 
       if (pos < 0) {
@@ -56,16 +56,16 @@ class GalleryAllPhotos extends Component {
       }
       if (currPhoto > 1) {
         this.setState({
-          scrollPos: scrollPos + convertToPix(-1),
+          pickerScrollPos: pickerScrollPos + convertToPix(-1),
         });
       }
       if (pos < 0) {
         this.setState({
-          scrollPos: (maxPhotos - 3) * convertToPix(1),
+          pickerScrollPos: (maxPhotos - 3) * convertToPix(1),
         });
       }
     } else if (event.keyCode === 39 || event.keyCode === 40) {
-      const { currPhoto, maxPhotos, scrollPos } = this.state;
+      const { currPhoto, maxPhotos, pickerScrollPos } = this.state;
       const pos = currPhoto + 1;
 
       if (pos >= maxPhotos) {
@@ -79,12 +79,12 @@ class GalleryAllPhotos extends Component {
       }
       if (currPhoto > 1) {
         this.setState({
-          scrollPos: scrollPos + convertToPix(1),
+          pickerScrollPos: pickerScrollPos + convertToPix(1),
         });
       }
       if (pos >= maxPhotos) {
         this.setState({
-          scrollPos: 0,
+          pickerScrollPos: 0,
         });
       }
     }
@@ -93,12 +93,12 @@ class GalleryAllPhotos extends Component {
   handlePickerSelection(selection) {
     this.setState(() => ({
       currPhoto: selection,
-      scrollPos: selection > 1 ? (selection - 2) * convertToPix(1) : 0,
+      pickerScrollPos: selection > 1 ? (selection - 2) * convertToPix(1) : 0,
     }));
   }
 
   render() {
-    const { mainURL, currPhoto, maxPhotos, scrollPos } = this.state;
+    const { mainURL, currPhoto, maxPhotos, pickerScrollPos } = this.state;
     return (
       <div>
         <GalleryAllPhotosStyles
@@ -111,7 +111,7 @@ class GalleryAllPhotos extends Component {
             url={mainURL}
             max={maxPhotos}
             onPickerSelection={this.handlePickerSelection}
-            scrollPos={scrollPos}
+            pickerScrollPos={pickerScrollPos}
             currPhoto={currPhoto}
           />
         </GalleryAllPhotosStyles>

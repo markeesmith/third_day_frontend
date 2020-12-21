@@ -10,13 +10,13 @@ class GalleryPicker extends Component {
   }
 
   componentDidMount() {
-    const { scrollPos } = this.props;
-    this.scrollDiv.current.scrollTop = scrollPos;
+    const { pickerScrollPos } = this.props;
+    this.scrollDiv.current.scrollTop = pickerScrollPos;
   }
 
   componentDidUpdate() {
-    const { scrollPos } = this.props;
-    this.scrollDiv.current.scrollTop = scrollPos;
+    const { pickerScrollPos } = this.props;
+    this.scrollDiv.current.scrollTop = pickerScrollPos;
   }
 
   render() {
@@ -41,7 +41,7 @@ GalleryPicker.propTypes = {
   url: PropTypes.string.isRequired,
   max: PropTypes.number.isRequired,
   onPickerSelection: PropTypes.func.isRequired,
-  scrollPos: PropTypes.number.isRequired,
+  pickerScrollPos: PropTypes.number.isRequired,
   currPhoto: PropTypes.number.isRequired,
 };
 
