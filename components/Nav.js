@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-// import { isMobile } from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 import NavBarDesktop from './NavBarDesktop';
 import NavBarMobile from './NavBarMobile';
 
-const isMobile = false;
+// const isMobile = false;
 
 class Nav extends Component {
   constructor(props) {

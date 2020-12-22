@@ -27,6 +27,7 @@ const JumboImg = ({ imgSrc, height }) => {
         ${imgSrc}-767.jpg 767w,
         ${imgSrc}-1024.jpg 1024w,
         ${imgSrc}-1280.jpg 1280w,
+        ${imgSrc}-1920.jpg 1920w,
         `}
         sizes="100%"
         src={`${imgSrc}-480.jpg 480w`}

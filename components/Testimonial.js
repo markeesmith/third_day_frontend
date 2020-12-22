@@ -6,6 +6,20 @@ const Testimonial = ({ testimonial }) => {
   const needHR = testimonial.testimonial_id !== 3;
   const imgLeft = testimonial.testimonial_id % 2 !== 0;
 
+  if (testimonial.testimonial_id === 1) {
+    const galleryPath = 'jumbo/asset';
+    return (
+      <TestimonialEntry
+        hr={needHR}
+        imgLeft={imgLeft}
+        galPath={galleryPath}
+        headline={testimonial.headline}
+        body={testimonial.body}
+        name={testimonial.customer.firstName}
+      />
+    );
+  }
+
   return (
     <TestimonialEntry
       hr={needHR}
