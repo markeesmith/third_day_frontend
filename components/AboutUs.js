@@ -1,4 +1,5 @@
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 import AboutStyles from './styles/AboutStyles';
 import JumboImg from './JumboImg';
 
@@ -7,8 +8,8 @@ const imgSrc = `${process.env.NEXT_PUBLIC_S3_BASE_URL}jumbo/asset`;
 const AboutUs = () => {
   return (
     <div>
-      <JumboImg imgSrc={`${imgSrc}3`} height="65vh" />
-      <AboutStyles>
+      <JumboImg imgSrc={`${imgSrc}3`} height="65vh" isMobile={isMobile} />
+      <AboutStyles isMobile={isMobile}>
         <div className="AboutBlock">
           <h1>About The Builder</h1>
           <hr />

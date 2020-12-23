@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { isMobile } from 'react-device-detect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHandsHelping,
@@ -11,13 +12,18 @@ import JumboImg from './JumboImg';
 import AngledBanner from './AngledBanner';
 import Slideshow from './Slideshow';
 
+// REMOVE: For testing
+// eslint-disable-next-line
+import * as rdd from 'react-device-detect';
+rdd.isMobile = true;
+
 const homeSrc = `${process.env.NEXT_PUBLIC_S3_BASE_URL}jumbo/asset8`;
 const assetSrc = `${process.env.NEXT_PUBLIC_S3_BASE_URL}jumbo/asset2`;
 
 const Home = () => {
   return (
     <div>
-      <JumboImg imgSrc={homeSrc} height="75vh" />
+      <JumboImg imgSrc={homeSrc} height="75vh" isMobile={isMobile} />
       <AngledBanner
         text="Begin building your dream home today!"
         height="10vh"

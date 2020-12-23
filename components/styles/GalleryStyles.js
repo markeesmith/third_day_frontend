@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const GalleryStyles = styled.div`
   position: relative;
-  height: 50vh;
+  height: ${(props) => (props.isMobile ? '35vh' : '50vh')};
   max-height: 50vh;
   border: 1px solid #501414;
 

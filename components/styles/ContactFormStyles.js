@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const ContactFormStyles = styled.form`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: ${(props) => (props.isMobile ? '1fr' : '1fr 1fr')};
   width: 80vw;
   margin: 0 auto;
 
@@ -68,7 +68,7 @@ const ContactFormStyles = styled.form`
     grid-column: 1/-1;
     text-align: center;
     margin: 10px auto;
-    width: 15%;
+    width: ${(props) => (props.isMobile ? '50%' : '15%')};
     height: 7vh;
     border-radius: 4px;
     background-color: #501414;

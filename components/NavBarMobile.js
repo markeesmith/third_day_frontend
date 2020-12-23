@@ -7,7 +7,7 @@ import { LOCAL_STATE_QUERY } from '../lib/gql';
 
 import NavBarMobileStyle from './styles/NavBarMobileStyle';
 
-const NavBarMobile = ({ top }) => (
+const NavBarMobile = ({ top, isMobile }) => (
   <Query query={LOCAL_STATE_QUERY}>
     {({ data }) => (
       <NavBarMobileStyle top={top} open={data.hamburgerMenuOpen}>
@@ -18,6 +18,7 @@ const NavBarMobile = ({ top }) => (
               : 'static/logos/MainLogoMaroon.svg'
           }
           pad
+          isMobile={isMobile}
         />
         <HamburgerMenu top={top} />
       </NavBarMobileStyle>
@@ -27,6 +28,7 @@ const NavBarMobile = ({ top }) => (
 
 NavBarMobile.propTypes = {
   top: PropTypes.bool.isRequired,
+  isMobile: PropTypes.bool.isRequired,
 };
 
 export default NavBarMobile;

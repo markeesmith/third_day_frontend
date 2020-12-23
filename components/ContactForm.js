@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
+import { isMobile } from 'react-device-detect';
 import ContactFormStyles from './styles/ContactFormStyles';
 import JumboText from './JumboText';
 import { SEND_EMAIL_MUTATION } from '../lib/gql';
@@ -85,6 +86,7 @@ class ContactForm extends Component {
                     description: '',
                   });
                 }}
+                isMobile={isMobile}
               >
                 <fieldset disabled={loading} aria-busy={loading}>
                   <label htmlFor="firstName">

@@ -4,8 +4,7 @@ import styled from 'styled-components';
 
 const JumboImgStyles = styled.div`
   position: relative;
-  height: ${(props) => props.height};
-  width: 100%;
+  height: ${(props) => (props.isMobile ? '20vh' : props.height)};
   background-color: #501414;
 
   img {
@@ -18,9 +17,9 @@ const JumboImgStyles = styled.div`
   }
 `;
 
-const JumboImg = ({ imgSrc, height }) => {
+const JumboImg = ({ imgSrc, height, isMobile }) => {
   return (
-    <JumboImgStyles height={height}>
+    <JumboImgStyles height={height} isMobile={isMobile}>
       <img
         srcSet={`
         ${imgSrc}-480.jpg 480w,
@@ -40,6 +39,7 @@ const JumboImg = ({ imgSrc, height }) => {
 JumboImg.propTypes = {
   imgSrc: PropTypes.string.isRequired,
   height: PropTypes.string.isRequired,
+  isMobile: PropTypes.bool.isRequired,
 };
 
 export default JumboImg;

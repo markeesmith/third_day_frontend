@@ -3,8 +3,6 @@ import { isMobile } from 'react-device-detect';
 import NavBarDesktop from './NavBarDesktop';
 import NavBarMobile from './NavBarMobile';
 
-// const isMobile = false;
-
 class Nav extends Component {
   constructor(props) {
     super(props);
@@ -28,9 +26,9 @@ class Nav extends Component {
   render() {
     const { topOfPage } = this.state;
     if (isMobile) {
-      return <NavBarMobile top={topOfPage} />;
+      return <NavBarMobile isMobile={isMobile} top={topOfPage} />;
     }
-    return <NavBarDesktop top={topOfPage} />;
+    return <NavBarDesktop isMobile={isMobile} top={topOfPage} />;
   }
 }
 

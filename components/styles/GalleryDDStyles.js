@@ -5,7 +5,7 @@ const GalleryDDStyles = styled.select`
   color: #501414;
   line-height: 1.3;
   padding: 0.6em 1.4em 0.5em 0.8em;
-  width: 20%;
+  width: ${(props) => (props.isMobile ? '50%' : '20%')};
   box-sizing: border-box;
   margin: 0;
   border: 1px solid #aaa;

@@ -1,11 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
+import { isMobile } from 'react-device-detect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import FooterStyles from './styles/FooterStyles';
 import Logo from './Logo';
-
-const isMobile = false;
 
 const Footer = () => (
   <FooterStyles mobile={isMobile}>

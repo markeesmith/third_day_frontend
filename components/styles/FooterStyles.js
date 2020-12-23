@@ -11,6 +11,9 @@ const FooterStyles = styled.div`
     margin-block-end: 0;
   }
 
+  h2:nth-of-type(1) {
+  }
+
   .upper-wrapper {
     display: grid;
     grid-template-columns: ${(props) => (props.mobile ? '1fr' : '1fr 1fr')};

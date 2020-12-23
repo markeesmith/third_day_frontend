@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Query } from 'react-apollo';
+import { isMobile } from 'react-device-detect';
 import Gallery from './Gallery';
 import GalleryDropDown from './GalleryDropDown';
 import JumboText from './JumboText';
@@ -12,7 +13,7 @@ const Center = styled.div`
 
 const GalleryList = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: ${(props) => (props.isMobile ? '1fr' : '1fr 1fr')};
   padding-top: 5vh;
   padding-right: 2vw;
   padding-left: 2vw;
@@ -53,7 +54,7 @@ class AllGalleries extends Component {
     return (
       <Center>
         <JumboText
-          title="Gallery of Homes, Additions, and Remodels"
+          title="Gallery"
           body="View the expert craftsmanship provided by Third Day Builders"
         />
         <Query query={whichQuery} variables={{ searchTerm: gallerySelection }}>
@@ -63,13 +64,18 @@ class AllGalleries extends Component {
             return (
               <div>
                 <GalleryDropDown
+                  isMobile={isMobile}
                   dropDownChange={this.dropDownChange}
                   values={ddlValues}
                   selectedOption={gallerySelection}
                 />
-                <GalleryList>
+                <GalleryList isMobile={isMobile}>
                   {data.galleries.map((gallery) => (
-                    <Gallery gallery={gallery} key={gallery.gallery_id} />
+                    <Gallery
+                      isMobile={isMobile}
+                      gallery={gallery}
+                      key={gallery.gallery_id}
+                    />
                   ))}
                 </GalleryList>
               </div>

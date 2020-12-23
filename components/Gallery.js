@@ -20,13 +20,13 @@ class Gallery extends Component {
   }
 
   render() {
-    const { gallery } = this.props;
+    const { gallery, isMobile } = this.props;
     const { galleryHovered } = this.state;
     const imgSrc = process.env.NEXT_PUBLIC_S3_BASE_URL + gallery.galPath;
 
     if (gallery.galNumberItems > 1) {
       return (
-        <GalleryStyles>
+        <GalleryStyles isMobile={isMobile}>
           <FontAwesomeIcon className="picture-icon" icon={faClone} size="3x" />
           <GalleryOverlay
             hovered={galleryHovered}
@@ -41,7 +41,7 @@ class Gallery extends Component {
       );
     }
     return (
-      <GalleryStyles>
+      <GalleryStyles isMobile={isMobile}>
         <GalleryOverlay
           hovered={galleryHovered}
           numItems={gallery.galNumberItems}
@@ -63,6 +63,7 @@ Gallery.propTypes = {
     galPath: PropTypes.string.isRequired,
     galType: PropTypes.string.isRequired,
   }).isRequired,
+  isMobile: PropTypes.bool.isRequired,
 };
 
 export default Gallery;

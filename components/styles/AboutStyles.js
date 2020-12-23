@@ -2,20 +2,21 @@ import styled from 'styled-components';
 
 const AboutStyles = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: ${(props) => (props.isMobile ? '1fr' : '1fr 1fr')};
   width: 80vw;
   margin: 0 auto;
 
   .AboutBlock {
     width: 85%;
     margin: 0 auto;
-    padding: 4vh 0;
-    font-size: 2rem;
+    padding: ${(props) => (props.isMobile ? '2vh 0' : '4vh 0')};
+    font-size: ${(props) => (props.isMobile ? '1.25rem' : '2rem')};
   }
 
   h1 {
     margin-top: 0;
     margin-bottom: 0;
+    font-size: ${(props) => (props.isMobile ? '2.25rem' : '')};
   }
 
   hr {
@@ -29,18 +30,16 @@ const AboutStyles = styled.div`
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .AboutBanner {
     grid-column: 1 / -1;
-    width: 74vw;
-    margin: 0 auto;
     padding-top: 1.5vh;
     padding-bottom: 1.5vh;
 
     text-align: center;
-    font-size: 5rem;
+    font-size: ${(props) => (props.isMobile ? '2rem' : '5rem')};
     color: white;
     background-color: #501414;
   }
