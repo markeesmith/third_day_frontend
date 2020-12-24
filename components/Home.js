@@ -14,8 +14,8 @@ import Slideshow from './Slideshow';
 
 // REMOVE: For testing
 // eslint-disable-next-line
-import * as rdd from 'react-device-detect';
-rdd.isMobile = true;
+// import * as rdd from 'react-device-detect';
+// rdd.isMobile = true;
 
 const homeSrc = `${process.env.NEXT_PUBLIC_S3_BASE_URL}jumbo/asset8`;
 const assetSrc = `${process.env.NEXT_PUBLIC_S3_BASE_URL}jumbo/asset2`;
@@ -26,12 +26,11 @@ const Home = () => {
       <JumboImg imgSrc={homeSrc} height="75vh" isMobile={isMobile} />
       <AngledBanner
         text="Begin building your dream home today!"
-        height="10vh"
         foreColor="white"
         backColor="#501414"
-        font="3.5rem"
+        isMobile={isMobile}
       />
-      <HomeStyles>
+      <HomeStyles isMobile={isMobile}>
         <div className="TextSlideContainer">
           <div>
             <p>
@@ -50,7 +49,10 @@ const Home = () => {
             <h1>Why Choose Third Day?</h1>
           </div>
           <div className="Card">
-            <FontAwesomeIcon icon={faHandsHelping} size="5x" />
+            <FontAwesomeIcon
+              icon={faHandsHelping}
+              size={isMobile ? '3x' : '5x'}
+            />
             <h2>Dependable</h2>
             <p>
               With over 30 years of experience building custom homes, we
@@ -58,7 +60,7 @@ const Home = () => {
             </p>
           </div>
           <div className="Card">
-            <FontAwesomeIcon icon={faUser} size="5x" />
+            <FontAwesomeIcon icon={faUser} size={isMobile ? '3x' : '5x'} />
             <h2>Personable</h2>
             <p>
               Building a home is an incredible journey and we guarantee our full
@@ -66,7 +68,10 @@ const Home = () => {
             </p>
           </div>
           <div className="Card">
-            <FontAwesomeIcon icon={faExchangeAlt} size="5x" />
+            <FontAwesomeIcon
+              icon={faExchangeAlt}
+              size={isMobile ? '3x' : '5x'}
+            />
             <h2>Flexible</h2>
             <p>
               We are commited to tailoring your home to your specific needs and

@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
 const HomeStyles = styled.div`
-  width: 80%;
+  width: 80vw;
   margin: 0 auto;
 
   .TextSlideContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: ${(props) => (props.isMobile ? '1fr' : '1fr 1fr')};
     min-height: 40vh;
 
     p {
-      font-size: 2.25rem;
+      font-size: ${(props) => (props.isMobile ? '1.25rem' : '2rem')};
       text-align: center;
 
       span {
@@ -26,13 +26,13 @@ const HomeStyles = styled.div`
 
   .CardArea {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-
+    grid-template-columns: ${(props) =>
+      props.isMobile ? '1fr' : '1fr 1fr 1fr'};
     background-color: #501414;
     color: white;
 
     h1 {
-      font-size: 3.5rem;
+      font-size: ${(props) => (props.isMobile ? '2.25rem' : '3.5rem')};
     }
 
     button {
@@ -49,15 +49,11 @@ const HomeStyles = styled.div`
       -ms-user-select: none;
       user-select: none;
       border: 1px solid transparent;
-      padding: 0.375rem 0.75rem;
-      font-size: 1rem;
-      line-height: 1.5;
-      border-radius: 0.25rem;
       transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
         border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
       padding: 0.5rem 1rem;
-      font-size: 2rem;
+      font-size: ${(props) => (props.isMobile ? '1.25rem' : '2rem')};
       line-height: 1.5;
       border-radius: 0.3rem;
     }
@@ -97,11 +93,11 @@ const HomeStyles = styled.div`
     margin: 0 auto;
 
     h2 {
-      font-size: 3rem;
+      font-size: ${(props) => (props.isMobile ? '1.75rem' : '3rem')};
     }
 
     p {
-      font-size: 2rem;
+      font-size: ${(props) => (props.isMobile ? '1.25rem' : '2rem')};
     }
   }
 
@@ -127,7 +123,7 @@ const HomeStyles = styled.div`
       margin: 0;
       padding: 0;
       color: white;
-      font-size: 6rem;
+      font-size: ${(props) => (props.isMobile ? '1.75rem' : '6rem')};
     }
 
     img {

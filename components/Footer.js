@@ -14,7 +14,11 @@ const Footer = () => (
         <h2>Contact Us</h2>
         <div className="logo">
           <div>
-            <Logo imgSrc="static/logos/MainLogoMaroon.svg" pad={false} />
+            <Logo
+              imgSrc="static/logos/MainLogoMaroon.svg"
+              pad={false}
+              isMobile={isMobile}
+            />
           </div>
           <div>
             <p>
