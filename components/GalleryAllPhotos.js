@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { isMobile } from 'react-device-detect';
 import GalleryAllPhotosStyles from './styles/GalleryAllPhotosStyles';
 import GalleryAllMainImage from './GalleryAllMainImage';
 import GalleryPicker from './GalleryPicker';
@@ -65,7 +66,6 @@ class GalleryAllPhotos extends Component {
     if (event.keyCode === 37 || event.keyCode === 38) {
       const { currPhoto, maxPhotos, pickerScrollPos } = this.state;
       const pos = currPhoto - 1;
-
       if (pos < 0) {
         this.setState({
           currPhoto: maxPhotos - 1,
@@ -88,7 +88,6 @@ class GalleryAllPhotos extends Component {
     } else if (event.keyCode === 39 || event.keyCode === 40) {
       const { currPhoto, maxPhotos, pickerScrollPos } = this.state;
       const pos = currPhoto + 1;
-
       if (pos >= maxPhotos) {
         this.setState({
           currPhoto: 0,
@@ -126,10 +125,27 @@ class GalleryAllPhotos extends Component {
       pickerScrollPos,
       topOfPage,
     } = this.state;
+
+    if (isMobile) {
+      return (
+        <div>
+          <SpacingDiv top={topOfPage} />
+          <GalleryAllPhotosStyles
+            isMobile={isMobile}
+            tabIndex={-1}
+            ref={this.focusDiv}
+            onKeyDown={this.handleArrows}
+          >
+            <GalleryAllMainImage url={mainURL} position={currPhoto} />
+          </GalleryAllPhotosStyles>
+        </div>
+      );
+    }
     return (
       <div>
         <SpacingDiv top={topOfPage} />
         <GalleryAllPhotosStyles
+          isMobile={isMobile}
           tabIndex={-1}
           ref={this.focusDiv}
           onKeyDown={this.handleArrows}

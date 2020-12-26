@@ -2,13 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DOMPurify from 'dompurify';
 import styled from 'styled-components';
+import { isMobile } from 'react-device-detect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 
 const TestimonialTextStyles = styled.div`
   width: 90%;
-  ${({ imgLeft }) => (imgLeft ? 'margin-right: 10%' : 'margin-left: 10%')};
-  ${({ imgLeft }) => (imgLeft ? 'padding-left: 3vw' : 'padding-right: 3vw')};
+  ${({ imgLeft }) =>
+    imgLeft && !isMobile ? 'margin-right: 10%' : 'margin-left: 10%'};
+  ${({ imgLeft }) =>
+    imgLeft && !isMobile ? 'padding-left: 3vw' : 'padding-right: 3vw'};
   padding-top: 5vh;
   padding-bottom: 5vh;
 

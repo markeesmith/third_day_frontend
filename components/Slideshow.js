@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const imgSrc = `${process.env.NEXT_PUBLIC_S3_BASE_URL}slideshow/home`;
 const homeNumbers = [1, 2, 3, 4, 5, 6, 8, 9];
 
 const SlideshowStyles = styled.div`
-  height: 50vh;
+  height: ${(props) => (props.isMobile ? '30vh' : '40vh')};
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: ${(props) => (props.isMobile ? 'contain' : 'cover')};
   }
 `;
 
@@ -42,11 +43,12 @@ class Slideshow extends Component {
 
   render() {
     const { slideshowPos } = this.state;
+    const { isMobile } = this.props;
     const srcText = `${imgSrc}${homeNumbers[slideshowPos]}-480.jpg`;
     const srcSetText = `${imgSrc}${homeNumbers[slideshowPos]}-480.jpg 480w, ${imgSrc}${homeNumbers[slideshowPos]}-767.jpg 767w, ${imgSrc}${homeNumbers[slideshowPos]}-1024.jpg 1024w, ${imgSrc}${homeNumbers[slideshowPos]}-1280.jpg 1280w, ${imgSrc}${homeNumbers[slideshowPos]}-1280.jpg 1300w`;
 
     return (
-      <SlideshowStyles>
+      <SlideshowStyles isMobile={isMobile}>
         <img
           srcSet={srcSetText}
           sizes="100%"
@@ -57,5 +59,9 @@ class Slideshow extends Component {
     );
   }
 }
+
+Slideshow.propTypes = {
+  isMobile: PropTypes.bool.isRequired,
+};
 
 export default Slideshow;

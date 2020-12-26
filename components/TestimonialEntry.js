@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { isMobile } from 'react-device-detect';
 import TestimonialImage from './TestimonialImage';
 import TestimonialText from './TestimonialText';
 
 const TestimonialStyles = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: ${(props) => (props.isMobile ? '1fr' : '1fr 1fr')};
   width: 80%;
   margin: 0 auto;
 `;
@@ -26,7 +27,7 @@ const TestimonialEntry = ({ hr, imgLeft, galPath, headline, body, name }) => {
       return (
         <div>
           <HR />
-          <TestimonialStyles>
+          <TestimonialStyles isMobile={isMobile}>
             <TestimonialImage imgSrc={galPath} />
             <TestimonialText headline={headline} text={body} name={name} />
           </TestimonialStyles>
@@ -36,7 +37,7 @@ const TestimonialEntry = ({ hr, imgLeft, galPath, headline, body, name }) => {
     return (
       <div>
         <HR />
-        <TestimonialStyles>
+        <TestimonialStyles isMobile={isMobile}>
           <TestimonialText
             headline={headline}
             text={body}
@@ -50,14 +51,14 @@ const TestimonialEntry = ({ hr, imgLeft, galPath, headline, body, name }) => {
   }
   if (imgLeft) {
     return (
-      <TestimonialStyles>
+      <TestimonialStyles isMobile={isMobile}>
         <TestimonialImage imgSrc={galPath} />
         <TestimonialText headline={headline} text={body} name={name} />
       </TestimonialStyles>
     );
   }
   return (
-    <TestimonialStyles>
+    <TestimonialStyles isMobile={isMobile}>
       <TestimonialText
         headline={headline}
         text={body}
