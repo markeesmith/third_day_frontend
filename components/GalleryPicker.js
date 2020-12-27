@@ -7,17 +7,39 @@ import GalleryPickerItem from './GalleryPickerItem';
 class GalleryPicker extends Component {
   constructor(props) {
     super(props);
+
+    this.getPickerScollPos = this.getPickerScollPos.bind(this);
     this.scrollDiv = React.createRef();
   }
 
   componentDidMount() {
-    const { pickerScrollPos } = this.props;
-    this.scrollDiv.current.scrollTop = pickerScrollPos;
+    if (isMobile) this.scrollDiv.current.scrollLeft = this.getPickerScollPos();
+    else this.scrollDiv.current.scrollTop = this.getPickerScollPos();
   }
 
   componentDidUpdate() {
-    const { pickerScrollPos } = this.props;
-    this.scrollDiv.current.scrollTop = pickerScrollPos;
+    if (isMobile) this.scrollDiv.current.scrollLeft = this.getPickerScollPos();
+    else this.scrollDiv.current.scrollTop = this.getPickerScollPos();
+  }
+
+  getPickerScollPos() {
+    let scrollPos;
+    const { scrollWidth, scrollHeight } = this.scrollDiv.current;
+    const { max, currPhoto } = this.props;
+    if (currPhoto > 1) {
+      scrollPos = isMobile
+        ? (scrollWidth / max) * (currPhoto - 1)
+        : (scrollHeight / max) * (currPhoto - 1);
+    }
+    if (currPhoto + 1 >= max) {
+      scrollPos = 0;
+    }
+    if (currPhoto === max - 1) {
+      scrollPos = isMobile
+        ? (scrollWidth / max) * (max - 2)
+        : (scrollHeight / max) * (max - 2);
+    }
+    return scrollPos;
   }
 
   render() {
@@ -42,7 +64,6 @@ GalleryPicker.propTypes = {
   url: PropTypes.string.isRequired,
   max: PropTypes.number.isRequired,
   onPickerSelection: PropTypes.func.isRequired,
-  pickerScrollPos: PropTypes.number.isRequired,
   currPhoto: PropTypes.number.isRequired,
 };
 

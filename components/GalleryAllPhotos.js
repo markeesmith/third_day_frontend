@@ -16,10 +16,6 @@ const SpacingDiv = styled.div`
   margin-bottom: 3vh;
 `;
 
-function convertToPix(dir) {
-  return dir * (window.innerHeight * 0.9 * 0.2);
-}
-
 function setBasePhotoURL(gallery) {
   return `${basePath + gallery.galPath}`;
 }
@@ -40,7 +36,6 @@ class GalleryAllPhotos extends Component {
       mainURL: setBasePhotoURL(gallery),
       currPhoto: 0,
       maxPhotos: gallery.galNumberItems,
-      pickerScrollPos: 0,
       topOfPage: true,
     };
   }
@@ -75,12 +70,11 @@ class GalleryAllPhotos extends Component {
   handlePickerSelection(selection) {
     this.setState(() => ({
       currPhoto: selection,
-      pickerScrollPos: selection > 1 ? (selection - 2) * convertToPix(1) : 0,
     }));
   }
 
   nextPhoto() {
-    const { currPhoto, maxPhotos, pickerScrollPos } = this.state;
+    const { currPhoto, maxPhotos } = this.state;
     const pos = currPhoto + 1;
     if (pos >= maxPhotos) {
       this.setState({
@@ -91,20 +85,10 @@ class GalleryAllPhotos extends Component {
         currPhoto: currPhoto + 1,
       });
     }
-    if (currPhoto > 1) {
-      this.setState({
-        pickerScrollPos: pickerScrollPos + convertToPix(1),
-      });
-    }
-    if (pos >= maxPhotos) {
-      this.setState({
-        pickerScrollPos: 0,
-      });
-    }
   }
 
   prevPhoto() {
-    const { currPhoto, maxPhotos, pickerScrollPos } = this.state;
+    const { currPhoto, maxPhotos } = this.state;
     const pos = currPhoto - 1;
     if (pos < 0) {
       this.setState({
@@ -115,26 +99,10 @@ class GalleryAllPhotos extends Component {
         currPhoto: currPhoto - 1,
       });
     }
-    if (currPhoto > 1) {
-      this.setState({
-        pickerScrollPos: pickerScrollPos + convertToPix(-1),
-      });
-    }
-    if (pos < 0) {
-      this.setState({
-        pickerScrollPos: (maxPhotos - 3) * convertToPix(1),
-      });
-    }
   }
 
   render() {
-    const {
-      mainURL,
-      currPhoto,
-      maxPhotos,
-      pickerScrollPos,
-      topOfPage,
-    } = this.state;
+    const { mainURL, currPhoto, maxPhotos, topOfPage } = this.state;
 
     if (isMobile) {
       return (
@@ -156,7 +124,6 @@ class GalleryAllPhotos extends Component {
               url={mainURL}
               max={maxPhotos}
               onPickerSelection={this.handlePickerSelection}
-              pickerScrollPos={pickerScrollPos}
               currPhoto={currPhoto}
             />
           </GalleryAllPhotosStyles>
@@ -177,7 +144,6 @@ class GalleryAllPhotos extends Component {
             url={mainURL}
             max={maxPhotos}
             onPickerSelection={this.handlePickerSelection}
-            pickerScrollPos={pickerScrollPos}
             currPhoto={currPhoto}
           />
         </GalleryAllPhotosStyles>

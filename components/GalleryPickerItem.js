@@ -7,17 +7,19 @@ const GalleryPickerItemStyles = styled.div`
   display: ${(props) => (props.isMobile ? 'inline-block' : 'block')};
   height: ${(props) => (props.isMobile ? '70%' : '20%')};
   ${(props) => !props.isMobile && `width: 90%`};
+  ${(props) => props.isMobile && `width: 33%`};
   margin: ${(props) => (props.isMobile ? '2vh 1vh' : '2vh auto')};
   text-align: center;
 
   img {
     vertical-align: middle;
     height: 100%;
-    width: auto;
+    width: ${(props) => (props.isMobile ? '100%' : 'auto')};
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
+    ${(props) => props.isMobile && `object-fit: contain`};
   }
 
   #selectedPhoto {
