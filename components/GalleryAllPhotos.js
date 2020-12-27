@@ -152,6 +152,13 @@ class GalleryAllPhotos extends Component {
               nextPhoto={this.nextPhoto}
               prevPhoto={this.prevPhoto}
             />
+            <GalleryPicker
+              url={mainURL}
+              max={maxPhotos}
+              onPickerSelection={this.handlePickerSelection}
+              pickerScrollPos={pickerScrollPos}
+              currPhoto={currPhoto}
+            />
           </GalleryAllPhotosStyles>
         </div>
       );

@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { isMobile } from 'react-device-detect';
 
 const GalleryPickerItemStyles = styled.div`
-  height: 20%;
-  width: 90%;
-  margin: 2vh auto;
+  display: ${(props) => (props.isMobile ? 'inline-block' : 'block')};
+  height: ${(props) => (props.isMobile ? '70%' : '20%')};
+  ${(props) => !props.isMobile && `width: 90%`};
+  margin: ${(props) => (props.isMobile ? '2vh 1vh' : '2vh auto')};
   text-align: center;
 
   img {
@@ -32,7 +34,7 @@ function keyPress(event, f, pos) {
 const GalleryPickerItem = ({ url, photo, onPickerSelection, currPhoto }) => {
   if (photo === currPhoto) {
     return (
-      <GalleryPickerItemStyles>
+      <GalleryPickerItemStyles isMobile={isMobile}>
         <a
           onClick={() => onPickerSelection(photo)}
           role="button"
@@ -52,7 +54,7 @@ const GalleryPickerItem = ({ url, photo, onPickerSelection, currPhoto }) => {
     );
   }
   return (
-    <GalleryPickerItemStyles>
+    <GalleryPickerItemStyles isMobile={isMobile}>
       <a
         onClick={() => onPickerSelection(photo)}
         role="button"

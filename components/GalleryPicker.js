@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { isMobile } from 'react-device-detect';
 import GalleryPickerStyles from './styles/GalleryPickerStyles';
 import GalleryPickerItem from './GalleryPickerItem';
 
@@ -22,7 +23,7 @@ class GalleryPicker extends Component {
   render() {
     const { url, max, onPickerSelection, currPhoto } = this.props;
     return (
-      <GalleryPickerStyles ref={this.scrollDiv}>
+      <GalleryPickerStyles ref={this.scrollDiv} isMobile={isMobile}>
         {[...Array(max)].map((pos, i) => (
           <GalleryPickerItem
             key={i + 1}

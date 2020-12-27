@@ -13,7 +13,7 @@ const GalleryAllPhotosStyles = styled.div`
   }
 
   img {
-    height: ${(props) => (props.isMobile ? '50vh' : '80vh')};
+    height: ${(props) => (props.isMobile ? '60vh' : '80vh')};
     width: ${(props) => (props.isMobile ? '90%' : '100%')};
     object-fit: contain;
   }

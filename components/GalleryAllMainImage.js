@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-// const GalleryAllMainImage = ({ url, position }) => (
-// <div>
-//   <img sizes="100%" src={`${url}${position}-1024.jpg`} alt="Main Gallery" />
-// </div>
-// );
-
 const swipeThreshold = 10;
 
 class GalleryAllMainImage extends Component {
