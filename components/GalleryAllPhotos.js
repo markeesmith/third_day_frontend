@@ -7,7 +7,6 @@ import GalleryAllMainImage from './GalleryAllMainImage';
 import GalleryPicker from './GalleryPicker';
 
 const basePath = process.env.NEXT_PUBLIC_S3_BASE_URL;
-const swipeThreshold = 10;
 
 const SpacingDiv = styled.div`
   height: 20vh;
@@ -35,8 +34,6 @@ class GalleryAllPhotos extends Component {
     this.handlePickerSelection = this.handlePickerSelection.bind(this);
     this.nextPhoto = this.nextPhoto.bind(this);
     this.prevPhoto = this.prevPhoto.bind(this);
-    this.handleTouchStart = this.handleTouchStart.bind(this);
-    this.handleTouchEnd = this.handleTouchEnd.bind(this);
     this.focusDiv = React.createRef();
 
     this.state = {
@@ -45,22 +42,17 @@ class GalleryAllPhotos extends Component {
       maxPhotos: gallery.galNumberItems,
       pickerScrollPos: 0,
       topOfPage: true,
-      swipeStartX: 0,
     };
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
-    window.addEventListener('touchstart', this.handleTouchStart);
-    window.addEventListener('touchend', this.handleTouchEnd);
     this.focusDiv.current.focus();
     window.scrollTo(0, window.innerHeight * 0.08);
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
-    window.removeEventListener('touchstart', this.handleTouchStart);
-    window.removeEventListener('touchend', this.handleTouchEnd);
   }
 
   handleScroll() {
@@ -85,23 +77,6 @@ class GalleryAllPhotos extends Component {
       currPhoto: selection,
       pickerScrollPos: selection > 1 ? (selection - 2) * convertToPix(1) : 0,
     }));
-  }
-
-  handleTouchStart(event) {
-    this.setState({
-      swipeStartX: event.changedTouches[0].pageX,
-    });
-  }
-
-  handleTouchEnd(event) {
-    const { swipeStartX } = this.state;
-    const distanceX = event.changedTouches[0].pageX - swipeStartX;
-
-    if (distanceX > swipeThreshold) {
-      this.nextPhoto();
-    } else if (distanceX < -swipeThreshold) {
-      this.prevPhoto();
-    }
   }
 
   nextPhoto() {
@@ -171,7 +146,12 @@ class GalleryAllPhotos extends Component {
             ref={this.focusDiv}
             onKeyDown={this.handleArrows}
           >
-            <GalleryAllMainImage url={mainURL} position={currPhoto} />
+            <GalleryAllMainImage
+              url={mainURL}
+              position={currPhoto}
+              nextPhoto={this.nextPhoto}
+              prevPhoto={this.prevPhoto}
+            />
           </GalleryAllPhotosStyles>
         </div>
       );
