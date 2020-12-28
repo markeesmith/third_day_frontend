@@ -8,7 +8,7 @@ import TestimonialText from './TestimonialText';
 const TestimonialStyles = styled.div`
   display: grid;
   grid-template-columns: ${(props) => (props.isMobile ? '1fr' : '1fr 1fr')};
-  width: 80%;
+  width: ${(props) => (props.isMobile ? '90%' : '80%')};
   margin: 0 auto;
 `;
 
@@ -22,6 +22,8 @@ const HR = styled.hr`
 `;
 
 const TestimonialEntry = ({ hr, imgLeft, galPath, headline, body, name }) => {
+  // eslint-disable-next-line
+  if (isMobile) imgLeft = false;
   if (hr) {
     if (imgLeft) {
       return (

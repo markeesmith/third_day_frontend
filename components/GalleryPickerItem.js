@@ -25,8 +25,8 @@ const GalleryPickerItemStyles = styled.div`
   #selectedPhoto {
     ${(props) =>
       props.isMobile
-        ? 'filter: drop-shadow(0 -3px 0 #501414) drop-shadow(0 3px 0 #501414) drop-shadow(-3px 0 0 #501414) drop-shadow(3px 0 0 #501414);'
-        : '4px solid #501414'};
+        ? 'filter: drop-shadow(0 -3px 0 #501414) drop-shadow(0 3px 0 #501414) drop-shadow(-3px 0 0 #501414) drop-shadow(3px 0 0 #501414)'
+        : 'border: 4px solid #501414'};
   }
 `;
 

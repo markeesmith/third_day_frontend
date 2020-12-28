@@ -14,8 +14,8 @@ import Slideshow from './Slideshow';
 
 // REMOVE: For testing
 // eslint-disable-next-line
-import * as rdd from 'react-device-detect';
-rdd.isMobile = true;
+// import * as rdd from 'react-device-detect';
+// rdd.isMobile = true;
 
 const homeSrc = `${process.env.NEXT_PUBLIC_S3_BASE_URL}jumbo/asset8`;
 const assetSrc = `${process.env.NEXT_PUBLIC_S3_BASE_URL}jumbo/asset2`;

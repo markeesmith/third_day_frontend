@@ -1,22 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { isMobile } from 'react-device-detect';
 
 const TestimonialImageStyle = styled.div`
-  position: relative;
-  width: 90%;
-  margin-left: 10%;
+  position: ${(props) => (props.isMobile ? 'initial' : 'relative')};
+  width: ${(props) => (props.isMobile ? '100%' : '90%')};
+  margin-left: ${(props) => (props.isMobile ? '0' : '10%')};
+  ${(props) => props.isMobile && `text-align: center`};
 
   img {
     max-width: 100%;
     max-height: 100%;
-    width: auto;
+    width: ${(props) => (props.isMobile ? '60%' : 'auto')};
     height: auto;
-    position: absolute;
+    ${(props) =>
+      !props.isMobile &&
+      `position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
+    right: 0;`};
+
     margin: auto;
     border: 1px solid #501414;
   }
@@ -25,7 +30,7 @@ const TestimonialImageStyle = styled.div`
 const basePath = process.env.NEXT_PUBLIC_S3_BASE_URL;
 
 const TestimonialImage = ({ imgSrc }) => (
-  <TestimonialImageStyle>
+  <TestimonialImageStyle isMobile={isMobile}>
     <img src={`${basePath + imgSrc}0-1024.jpg`} alt="Testimonial" />
   </TestimonialImageStyle>
 );
