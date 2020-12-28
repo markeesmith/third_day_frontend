@@ -6,12 +6,12 @@ const imgSrc = `${process.env.NEXT_PUBLIC_S3_BASE_URL}slideshow/`;
 const homeNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const SlideshowStyles = styled.div`
-  height: ${(props) => (props.isMobile ? '30vh' : '40vh')};
+  height: ${(props) => (props.isMobile ? '30vh' : '50vh')};
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: ${(props) => (props.isMobile ? 'contain' : 'contain')};
+    object-fit: ${(props) => (props.isMobile ? 'contain' : 'cover')};
   }
 `;
 
