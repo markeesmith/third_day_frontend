@@ -11,7 +11,7 @@ const SlideshowStyles = styled.div`
   img {
     width: 100%;
     height: 100%;
-    object-fit: ${(props) => (props.isMobile ? 'contain' : 'cover')};
+    object-fit: ${(props) => (props.isMobile ? 'contain' : 'contain')};
   }
 `;
 

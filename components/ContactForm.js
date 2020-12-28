@@ -3,7 +3,12 @@ import { Mutation } from 'react-apollo';
 import { isMobile } from 'react-device-detect';
 import ContactFormStyles from './styles/ContactFormStyles';
 import JumboText from './JumboText';
+import Error from './ErrorMessage';
+import Success from './SuccessBanner';
 import { SEND_EMAIL_MUTATION } from '../lib/gql';
+
+const successMessage =
+  'Success! Thank you for eaching out to Third Day Builders! You should receive a confirmation email shortly.';
 
 class ContactForm extends Component {
   constructor(props) {
@@ -57,7 +62,7 @@ class ContactForm extends Component {
     } = this.state;
     return (
       <Mutation mutation={SEND_EMAIL_MUTATION} variables={this.state}>
-        {(requestContact, { error, loading }) => {
+        {(requestContact, { error, loading, called }) => {
           if (error) return <p>Error: {error.message}</p>;
           return (
             <div>
@@ -65,6 +70,10 @@ class ContactForm extends Component {
                 title="Contact Third Day Builders"
                 body="Let's begin building your dream home"
               />
+              <Error error={error} />
+              {!error && !loading && called && (
+                <Success successMessage={successMessage} />
+              )}
               <ContactFormStyles
                 method="post"
                 onSubmit={async (e) => {
