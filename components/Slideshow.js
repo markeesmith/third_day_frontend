@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const imgSrc = `${process.env.NEXT_PUBLIC_S3_BASE_URL}slideshow/home`;
-const homeNumbers = [1, 2, 3, 4, 5, 6, 8, 9];
+const imgSrc = `${process.env.NEXT_PUBLIC_S3_BASE_URL}slideshow/`;
+const homeNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const SlideshowStyles = styled.div`
   height: ${(props) => (props.isMobile ? '30vh' : '40vh')};
