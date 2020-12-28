@@ -11,6 +11,14 @@ const GalleryPickerItemStyles = styled.div`
   margin: ${(props) => (props.isMobile ? '2vh 1vh' : '2vh auto')};
   text-align: center;
 
+  a:focus,
+  a:active {
+    outline: 0;
+    border: none;
+    outline-style: none;
+    -moz-outline-style: none;
+  }
+
   img {
     vertical-align: middle;
     height: 100%;
