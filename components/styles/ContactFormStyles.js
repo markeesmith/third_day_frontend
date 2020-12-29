@@ -65,9 +65,8 @@ const ContactFormStyles = styled.form`
 
   button {
     cursor: pointer;
-    grid-column: 1/-1;
-    text-align: center;
     margin: 10px auto;
+    text-align: center;
     width: ${(props) => (props.isMobile ? '50%' : '15%')};
     height: 7vh;
     border-radius: 4px;
@@ -101,6 +100,11 @@ const ContactFormStyles = styled.form`
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #501414;
       outline: 0 none;
     }
+  }
+
+  #submitField {
+    grid-column: 1/-1;
+    text-align: center;
   }
 `;
 

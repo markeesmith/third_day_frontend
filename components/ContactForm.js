@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import { isMobile } from 'react-device-detect';
+import ReCaptcha from 'react-google-recaptcha';
 import ContactFormStyles from './styles/ContactFormStyles';
 import JumboText from './JumboText';
 import Error from './ErrorMessage';
-import Success from './SuccessBanner';
+import Success from './SuccessMessage';
 import { SEND_EMAIL_MUTATION } from '../lib/gql';
 
 const successMessage =
@@ -13,6 +14,9 @@ const successMessage =
 class ContactForm extends Component {
   constructor(props) {
     super(props);
+
+    this.recaptchaRef = React.createRef();
+
     this.saveToState = this.saveToState.bind(this);
     this.changeBoolState = this.changeBoolState.bind(this);
     this.state = {
@@ -27,7 +31,7 @@ class ContactForm extends Component {
       chkCustom: false,
       chkAddition: false,
       chkRemodel: false,
-      budget: 0.0,
+      budget: '0',
       description: '',
     };
   }
@@ -63,7 +67,6 @@ class ContactForm extends Component {
     return (
       <Mutation mutation={SEND_EMAIL_MUTATION} variables={this.state}>
         {(requestContact, { error, loading, called }) => {
-          if (error) return <p>Error: {error.message}</p>;
           return (
             <div>
               <JumboText
@@ -78,6 +81,7 @@ class ContactForm extends Component {
                 method="post"
                 onSubmit={async (e) => {
                   e.preventDefault();
+                  this.recaptchaRef.current.execute();
                   await requestContact();
                   this.setState({
                     firstName: '',
@@ -91,7 +95,7 @@ class ContactForm extends Component {
                     chkCustom: false,
                     chkAddition: false,
                     chkRemodel: false,
-                    budget: 0.0,
+                    budget: '0',
                     description: '',
                   });
                 }}
@@ -237,14 +241,16 @@ class ContactForm extends Component {
                     />
                   </label>
                 </fieldset>
-                <button
-                  type="submit"
-                  className="contactButton"
-                  disabled={loading}
-                  aria-busy={loading}
-                >
-                  Submit
-                </button>
+                <div disabled={loading} aria-busy={loading} id="submitField">
+                  <ReCaptcha
+                    ref={this.recaptchaRef}
+                    sitekey={process.env.NEXT_PUBLIC_DEV_RECAPTCHA_SITE_KEY}
+                    size="invisible"
+                  />
+                  <button type="submit" className="contactButton">
+                    Submit
+                  </button>
+                </div>
               </ContactFormStyles>
             </div>
           );
