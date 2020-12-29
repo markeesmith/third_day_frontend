@@ -70,13 +70,13 @@ const Footer = () => (
     <hr />
     <div className="lower-wrapper">
       <div>
-        <Link href="/">
+        <Link href="/privacy">
           <a>Privacy Policy</a>
         </Link>
-        <Link href="/">
+        <Link href="/terms">
           <a>Terms of Use</a>
         </Link>
-        <Link href="/">
+        <Link href="/sitemap">
           <a>Sitemap</a>
         </Link>
         <p>
