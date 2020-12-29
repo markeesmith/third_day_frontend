@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { isMobile } from 'react-device-detect';
+import ReactIsInDevelomentMode from '../lib/helper';
 
 const TestimonialImageStyle = styled.div`
   position: ${(props) => (props.isMobile ? 'initial' : 'relative')};
@@ -27,7 +28,9 @@ const TestimonialImageStyle = styled.div`
   }
 `;
 
-const basePath = process.env.NEXT_PUBLIC_S3_BASE_URL;
+const basePath = ReactIsInDevelomentMode()
+  ? process.env.NEXT_PUBLIC_S3_BASE_URL
+  : process.env.S3_BASE_URL;
 
 const TestimonialImage = ({ imgSrc }) => (
   <TestimonialImageStyle isMobile={isMobile}>

@@ -5,6 +5,11 @@ import { faClone } from '@fortawesome/free-solid-svg-icons';
 import GalleryStyles from './styles/GalleryStyles';
 import GalleryOverlay from './GalleryOverlay';
 import GalleryImage from './GalleryImage';
+import ReactIsInDevelomentMode from '../lib/helper';
+
+const basePath = ReactIsInDevelomentMode()
+  ? process.env.NEXT_PUBLIC_S3_BASE_URL
+  : process.env.S3_BASE_URL;
 
 class Gallery extends Component {
   constructor(props) {
@@ -22,7 +27,7 @@ class Gallery extends Component {
   render() {
     const { gallery, isMobile } = this.props;
     const { galleryHovered } = this.state;
-    const imgSrc = process.env.NEXT_PUBLIC_S3_BASE_URL + gallery.galPath;
+    const imgSrc = basePath + gallery.galPath;
 
     if (gallery.galNumberItems > 1) {
       return (

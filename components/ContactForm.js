@@ -7,9 +7,13 @@ import JumboText from './JumboText';
 import Error from './ErrorMessage';
 import Success from './SuccessMessage';
 import { SEND_EMAIL_MUTATION } from '../lib/gql';
+import ReactIsInDevelomentMode from '../lib/helper';
 
 const successMessage =
   'Success! Thank you for eaching out to Third Day Builders! You should receive a confirmation email shortly.';
+const sitekey = ReactIsInDevelomentMode()
+  ? process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+  : process.env.RECAPTCHA_SITE_KEY;
 
 class ContactForm extends Component {
   constructor(props) {
@@ -244,7 +248,7 @@ class ContactForm extends Component {
                 <div disabled={loading} aria-busy={loading} id="submitField">
                   <ReCaptcha
                     ref={this.recaptchaRef}
-                    sitekey={process.env.NEXT_PUBLIC_DEV_RECAPTCHA_SITE_KEY}
+                    sitekey={sitekey}
                     size="invisible"
                   />
                   <button type="submit" className="contactButton">
