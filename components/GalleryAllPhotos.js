@@ -5,11 +5,8 @@ import { isMobile } from 'react-device-detect';
 import GalleryAllPhotosStyles from './styles/GalleryAllPhotosStyles';
 import GalleryAllMainImage from './GalleryAllMainImage';
 import GalleryPicker from './GalleryPicker';
-import ReactIsInDevelomentMode from '../lib/helper';
 
-const basePath = ReactIsInDevelomentMode()
-  ? process.env.NEXT_PUBLIC_S3_BASE_URL
-  : process.env.S3_BASE_URL;
+const basePath = process.env.S3_BASE_URL;
 
 const SpacingDiv = styled.div`
   height: 20vh;

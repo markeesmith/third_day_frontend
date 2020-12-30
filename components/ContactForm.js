@@ -7,13 +7,10 @@ import JumboText from './JumboText';
 import Error from './ErrorMessage';
 import Success from './SuccessMessage';
 import { SEND_EMAIL_MUTATION } from '../lib/gql';
-import ReactIsInDevelomentMode from '../lib/helper';
 
 const successMessage =
   'Success! Thank you for eaching out to Third Day Builders! You should receive a confirmation email shortly.';
-const sitekey = ReactIsInDevelomentMode()
-  ? process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
-  : process.env.RECAPTCHA_SITE_KEY;
+const sitekey = process.env.RECAPTCHA_SITE_KEY;
 
 class ContactForm extends Component {
   constructor(props) {

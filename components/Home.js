@@ -11,14 +11,9 @@ import HomeStyles from './styles/HomeStyles';
 import JumboImg from './JumboImg';
 import AngledBanner from './AngledBanner';
 import Slideshow from './Slideshow';
-import ReactIsInDevelomentMode from '../lib/helper';
 
-const homeSrc = ReactIsInDevelomentMode()
-  ? `${process.env.NEXT_PUBLIC_S3_BASE_URL}jumbo/asset8`
-  : `${process.env.S3_BASE_URL}jumbo/asset8`;
-const assetSrc = ReactIsInDevelomentMode()
-  ? `${process.env.NEXT_PUBLIC_S3_BASE_URL}jumbo/asset2`
-  : `${process.env.S3_BASE_URL}jumbo/asset2`;
+const homeSrc = `${process.env.S3_BASE_URL}jumbo/asset8`;
+const assetSrc = `${process.env.S3_BASE_URL}jumbo/asset2`;
 
 const Home = () => {
   return (

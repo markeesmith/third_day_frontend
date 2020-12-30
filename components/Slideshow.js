@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import ReactIsInDevelomentMode from '../lib/helper';
 
-const imgSrc = ReactIsInDevelomentMode()
-  ? `${process.env.NEXT_PUBLIC_S3_BASE_URL}slideshow/`
-  : `${process.env.S3_BASE_URL}slideshow/`;
+const imgSrc = `${process.env.S3_BASE_URL}slideshow/`;
 const homeNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const SlideshowStyles = styled.div`

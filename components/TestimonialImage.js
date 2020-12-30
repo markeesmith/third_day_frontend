@@ -28,9 +28,7 @@ const TestimonialImageStyle = styled.div`
   }
 `;
 
-const basePath = ReactIsInDevelomentMode()
-  ? process.env.NEXT_PUBLIC_S3_BASE_URL
-  : process.env.S3_BASE_URL;
+const basePath = process.env.S3_BASE_URL;
 
 const TestimonialImage = ({ imgSrc }) => (
   <TestimonialImageStyle isMobile={isMobile}>
