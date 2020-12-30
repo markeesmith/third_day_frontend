@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { isMobile } from 'react-device-detect';
-import ReactIsInDevelomentMode from '../lib/helper';
 
 const TestimonialImageStyle = styled.div`
   position: ${(props) => (props.isMobile ? 'initial' : 'relative')};
