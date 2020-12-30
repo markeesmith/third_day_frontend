@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { isMobile } from 'react-device-detect';
+import { s3Base } from '../config';
 
 const TestimonialImageStyle = styled.div`
   position: ${(props) => (props.isMobile ? 'initial' : 'relative')};
@@ -27,7 +28,7 @@ const TestimonialImageStyle = styled.div`
   }
 `;
 
-const basePath = process.env.S3_BASE_URL;
+const basePath = s3Base;
 
 const TestimonialImage = ({ imgSrc }) => (
   <TestimonialImageStyle isMobile={isMobile}>

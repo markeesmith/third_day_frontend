@@ -5,8 +5,9 @@ import { faClone } from '@fortawesome/free-solid-svg-icons';
 import GalleryStyles from './styles/GalleryStyles';
 import GalleryOverlay from './GalleryOverlay';
 import GalleryImage from './GalleryImage';
+import { s3Base } from '../config';
 
-const basePath = process.env.S3_BASE_URL;
+const basePath = s3Base;
 
 class Gallery extends Component {
   constructor(props) {

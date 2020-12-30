@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { s3Base } from '../config';
 
-const imgSrc = `${process.env.S3_BASE_URL}slideshow/`;
+const imgSrc = `${s3Base}slideshow/`;
 const homeNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const SlideshowStyles = styled.div`

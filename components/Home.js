@@ -11,9 +11,10 @@ import HomeStyles from './styles/HomeStyles';
 import JumboImg from './JumboImg';
 import AngledBanner from './AngledBanner';
 import Slideshow from './Slideshow';
+import { s3Base } from '../config';
 
-const homeSrc = `${process.env.S3_BASE_URL}jumbo/asset8`;
-const assetSrc = `${process.env.S3_BASE_URL}jumbo/asset2`;
+const homeSrc = `${s3Base}jumbo/asset8`;
+const assetSrc = `${s3Base}jumbo/asset2`;
 
 const Home = () => {
   return (

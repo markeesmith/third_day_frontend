@@ -2,8 +2,9 @@ import React from 'react';
 import { isMobile } from 'react-device-detect';
 import AboutStyles from './styles/AboutStyles';
 import JumboImg from './JumboImg';
+import { s3Base } from '../config';
 
-const imgSrc = `${process.env.S3_BASE_URL}jumbo/asset`;
+const imgSrc = `${s3Base}jumbo/asset`;
 
 const AboutUs = () => {
   return (
