@@ -7,7 +7,7 @@ const NavBarMobileStyle = styled.div`
   margin-block-start: 0;
   margin-block-end: 0;
   padding-inline-start: 0;
-  width: 100vw;
+  width: 100%;
 
   padding-top: ${(props) => (props.open ? '0' : props.top ? '5vh' : '0')};
   height: ${(props) => (props.open ? '15vh' : props.top ? '15vh' : '10vh')};

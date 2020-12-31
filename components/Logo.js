@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const LogoContainer = styled.div`
+  height: 100%;
+  width: 100%;
   padding-left: ${(props) => (props.pad ? '3vw' : '0vw')};
   img {
     max-height: ${(props) => (props.isMobile ? '6rem' : '8rem')};
