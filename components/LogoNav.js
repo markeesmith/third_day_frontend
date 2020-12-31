@@ -9,6 +9,7 @@ const LogoContainer = styled.div`
   padding-left: ${(props) => (props.pad ? '3vw' : '0vw')};
 
   img {
+    width: 100%;
     object-fit: contain;
     ${(props) => !props.isMobile && `cursor: pointer;`}
   }
