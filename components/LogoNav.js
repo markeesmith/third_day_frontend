@@ -9,13 +9,13 @@ const LogoContainer = styled.div`
   padding-left: ${(props) => (props.pad ? '3vw' : '0vw')};
 
   img {
-    /* max-height: 4rem; */
     object-fit: contain;
+    ${(props) => !props.isMobile && `cursor: pointer;`}
   }
 `;
 
-const LogoMobileNav = ({ pad, imgSrc }) => (
-  <LogoContainer pad={pad}>
+const LogoMobileNav = ({ pad, imgSrc, isMobile }) => (
+  <LogoContainer pad={pad} isMobile={isMobile}>
     <Link href="/">
       <img src={imgSrc} alt="Logo" />
     </Link>
@@ -25,6 +25,7 @@ const LogoMobileNav = ({ pad, imgSrc }) => (
 LogoMobileNav.propTypes = {
   pad: PropTypes.bool.isRequired,
   imgSrc: PropTypes.string.isRequired,
+  isMobile: PropTypes.bool.isRequired,
 };
 
 export default LogoMobileNav;

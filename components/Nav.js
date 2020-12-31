@@ -19,7 +19,8 @@ class Nav extends Component {
   }
 
   handleScroll() {
-    if (window.scrollY > 30) this.setState({ topOfPage: false });
+    if (window.scrollY > window.innerHeight * 0.1)
+      this.setState({ topOfPage: false });
     else this.setState({ topOfPage: true });
   }
 

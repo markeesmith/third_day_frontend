@@ -8,7 +8,8 @@ const LogoContainer = styled.div`
   width: 100%;
   padding-left: ${(props) => (props.pad ? '3vw' : '0vw')};
   img {
-    max-height: ${(props) => (props.isMobile ? '6rem' : '8rem')};
+    max-height: 8rem;
+    object-fit: contain;
     cursor: pointer;
   }
 `;
