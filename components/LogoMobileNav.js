@@ -9,7 +9,8 @@ const LogoContainer = styled.div`
   padding-left: ${(props) => (props.pad ? '3vw' : '0vw')};
 
   img {
-    max-height: 4rem;
+    /* max-height: 4rem; */
+    object-fit: contain;
   }
 `;
 
