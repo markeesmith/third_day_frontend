@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const LogoContainer = styled.div`
-  ${(props) => !props.isMobile && `height: 100%; width: 100%`};
+  height: 100%;
+  width: 100%;
   padding-left: ${(props) => (props.pad ? '3vw' : '0vw')};
 
   img {
     object-fit: contain;
-    ${(props) => props.isMobile && `height: 50px;`};
+    ${(props) => props.isMobile && `max-height: 50px;`};
     ${(props) => !props.isMobile && `cursor: pointer;`}
   }
 `;
