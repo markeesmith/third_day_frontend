@@ -44,7 +44,7 @@ class GalleryAllPhotos extends Component {
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
     this.focusDiv.current.focus();
-    window.scrollTo(0, window.innerHeight * 0.08);
+    window.scrollTo(0, window.innerHeight * 0.11);
   }
 
   componentWillUnmount() {
