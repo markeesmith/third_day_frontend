@@ -12,7 +12,15 @@ const NavBarMobile = ({ top, isMobile }) => {
     <Query query={LOCAL_STATE_QUERY}>
       {({ data }) => (
         <NavBarMobileStyle top={top} open={data.hamburgerMenuOpen}>
-          <LogoNav imgSrc={top ? '' : ''} pad={pad} isMobile={isMobile} />
+          <LogoNav
+            imgSrc={
+              top
+                ? 'static/logos/MainLogoWhiteMobile.svg'
+                : 'static/logos/MainLogoMaroonMobile.svg'
+            }
+            pad={pad}
+            isMobile={isMobile}
+          />
           <HamburgerMenu top={top} />
         </NavBarMobileStyle>
       )}
