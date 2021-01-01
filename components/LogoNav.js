@@ -7,8 +7,11 @@ const LogoContainer = styled.div`
   ${(props) => !props.isMobile && `height: 100%; width: 100%;`};
   padding-left: ${(props) => (props.pad ? '3vw' : '0vw')};
 
+  display: flex;
+  align-items: center;
+
   img {
-    ${(props) => props.isMobile && `max-height: 10vh;`};
+    ${(props) => props.isMobile && `max-height: 7vh;`};
     ${(props) => !props.isMobile && `cursor: pointer; object-fit: contain;`}
   }
 `;
