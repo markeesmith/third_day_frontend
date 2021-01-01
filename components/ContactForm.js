@@ -9,7 +9,7 @@ import Success from './SuccessMessage';
 import { SEND_EMAIL_MUTATION } from '../lib/gql';
 
 const successMessage =
-  'Success! Thank you for eaching out to Third Day Builders! You should receive a confirmation email shortly.';
+  'Success! Thank you for reaching out to Third Day Builders! You should receive a confirmation email shortly.';
 const sitekey = process.env.RECAPTCHA_SITE_KEY;
 
 class ContactForm extends Component {
@@ -84,6 +84,7 @@ class ContactForm extends Component {
                   e.preventDefault();
                   this.recaptchaRef.current.execute();
                   await requestContact();
+                  window.scrollY = 0;
                   this.setState({
                     firstName: '',
                     lastName: '',
