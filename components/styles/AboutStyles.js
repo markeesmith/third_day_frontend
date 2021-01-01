@@ -25,6 +25,7 @@ const AboutStyles = styled.div`
     color: #501414;
     background-color: #501414;
     margin-top: 0;
+    width: 100%;
   }
 
   img {
