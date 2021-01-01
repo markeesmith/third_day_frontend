@@ -1,6 +1,8 @@
 import React from 'react';
-import Home from '../components/Home';
+import dynamic from 'next/dynamic';
+//import Home from '../components/Home';
+// const Index = () => <Home />;
 
-const Index = () => <Home />;
+const Index = dynamic(() => import('../components/Home'), { ssr: false });
 
 export default Index;

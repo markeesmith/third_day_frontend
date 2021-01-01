@@ -4,6 +4,7 @@ const NavBarMobileStyle = styled.div`
   position: fixed;
   z-index: 3;
   top: 0;
+  left: 0;
   margin-block-start: 0;
   margin-block-end: 0;
   padding-inline-start: 0;
@@ -13,9 +14,12 @@ const NavBarMobileStyle = styled.div`
   height: ${(props) => (props.open ? '15vh' : props.top ? '15vh' : '10vh')};
   background-color: ${(props) => (props.top ? 'transparent' : 'white')};
 
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  /* display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: center; */
 
   transition: all 0.5s;
 
