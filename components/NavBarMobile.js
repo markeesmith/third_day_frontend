@@ -15,8 +15,8 @@ const NavBarMobile = ({ top, isMobile }) => {
           <LogoNav
             imgSrc={
               top
-                ? 'static/logos/MainLogoWhiteMobile.svg'
-                : 'static/logos/MainLogoMaroonMobile.svg'
+                ? 'static/logos/MainLogoWhite.svg'
+                : 'static/logos/MainLogoMaroon.svg'
             }
             pad={pad}
             isMobile={isMobile}
