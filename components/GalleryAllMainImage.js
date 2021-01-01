@@ -37,8 +37,9 @@ class GalleryAllMainImage extends Component {
     const { url, position } = this.props;
 
     return (
-      <div style={{ touchAction: 'none' }}>
+      <div>
         <img
+          style={{ touchAction: 'none' }}
           sizes="100%"
           src={`${url}${position}-1024.jpg`}
           alt="Main Gallery"
