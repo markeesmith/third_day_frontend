@@ -12,7 +12,9 @@ const LogoContainer = styled.div`
 
   img {
     ${(props) => props.isMobile && `max-height: 7vh;`};
-    ${(props) => !props.isMobile && `cursor: pointer; object-fit: contain;`}
+    ${(props) =>
+      !props.isMobile &&
+      `cursor: pointer; object-fit: contain; max-height: 10vh;`}
   }
 `;
 
