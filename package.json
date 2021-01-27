@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next -p 8000",
     "build": "next build",
-    "start": "npm start -p $PORT",
+    "start": "next start -p 8080",
     "test": "jest",
     "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
     "lint": "eslint ."

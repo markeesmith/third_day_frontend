@@ -30,11 +30,6 @@ const NavBarDesktop = styled.ul`
     text-decoration: underline;
   }
 
-  img {
-    max-height: 8rem;
-    cursor: pointer;
-  }
-
   div {
     width: 33vw;
   }

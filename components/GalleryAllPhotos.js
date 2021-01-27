@@ -5,11 +5,9 @@ import { isMobile } from 'react-device-detect';
 import GalleryAllPhotosStyles from './styles/GalleryAllPhotosStyles';
 import GalleryAllMainImage from './GalleryAllMainImage';
 import GalleryPicker from './GalleryPicker';
-import ReactIsInDevelomentMode from '../lib/helper';
+import { s3Base } from '../config';
 
-const basePath = ReactIsInDevelomentMode()
-  ? process.env.NEXT_PUBLIC_S3_BASE_URL
-  : process.env.S3_BASE_URL;
+const basePath = s3Base;
 
 const SpacingDiv = styled.div`
   height: 20vh;
@@ -46,7 +44,7 @@ class GalleryAllPhotos extends Component {
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
     this.focusDiv.current.focus();
-    window.scrollTo(0, window.innerHeight * 0.08);
+    window.scrollTo(0, window.innerHeight * 0.12);
   }
 
   componentWillUnmount() {

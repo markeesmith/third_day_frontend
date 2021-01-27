@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 const JumboImgStyles = styled.div`
   position: relative;
+  top: 0;
+  left: 0;
   height: ${(props) => (props.isMobile ? '20vh' : props.height)};
   background-color: #501414;
 

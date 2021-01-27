@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
+import dynamic from 'next/dynamic';
 import Meta from './Meta';
 import Header from './Header';
 import Footer from './Footer';
+import {isMobile} from 'react-device-detect';
 
 const theme = {
   maxWidth: '100vw',
@@ -22,8 +24,21 @@ const Inner = styled.div`
   /* height: 2000px; */
 `;
 
-const Page = ({ children }) => (
-  <ThemeProvider theme={theme}>
+const Page = ({ children }) => {
+  if (isMobile) {
+    const MobileHeader = dynamic(() => import('./Header'), {ssr: false});
+    const MobileFooter = dynamic(() => import('./Footer'), {ssr: false});
+    return(  <ThemeProvider theme={theme}>
+      <StyledPage>
+        <Meta />
+        <MobileHeader />
+        <Inner>{children}</Inner>
+        <MobileFooter />
+      </StyledPage>
+    </ThemeProvider>);
+  }
+  return(
+    <ThemeProvider theme={theme}>
     <StyledPage>
       <Meta />
       <Header />
@@ -31,7 +46,8 @@ const Page = ({ children }) => (
       <Footer />
     </StyledPage>
   </ThemeProvider>
-);
+  );
+};
 
 Page.propTypes = {
   children: PropTypes.node.isRequired,

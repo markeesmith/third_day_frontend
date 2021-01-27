@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import { isMobile } from 'react-device-detect';
 
 const JumboTextStyles = styled.div`
-  height: ${(props) => (props.isMobile ? '35vh' : '40vh')};
   background-color: #501414;
   color: white;
   text-align: center;
   padding-top: 15vh;
+  padding-bottom: 5vh;
   margin-bottom: 5vh;
 
   h1 {

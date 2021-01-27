@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import Logo from './Logo';
+import LogoNav from './LogoNav';
 import NavBarDesktopStyle from './styles/NavBarDesktopStyle';
 
 const NavBarDesktop = ({ top, isMobile }) => (
@@ -21,7 +21,7 @@ const NavBarDesktop = ({ top, isMobile }) => (
       </Link>
     </div>
 
-    <Logo
+    <LogoNav
       imgSrc={
         top
           ? 'static/logos/MainLogoWhite.svg'

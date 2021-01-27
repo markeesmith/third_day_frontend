@@ -13,8 +13,18 @@ const Testimonials = () => {
       />
       <Query query={ALL_TESTIMONIALS_QUERY}>
         {({ data, loading, error }) => {
-          if (loading) return <p>Loading...</p>;
-          if (error) return <p>Error: {error.message}</p>;
+          if (loading)
+            return (
+              <div style={{ textAlign: 'center' }}>
+                <p>Loading...</p>
+              </div>
+            );
+          if (error)
+            return (
+              <div style={{ textAlign: 'center' }}>
+                <p>Error: {error.message}</p>
+              </div>
+            );
           return (
             <div>
               {data.testimonials.map((testimonial) => (

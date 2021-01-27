@@ -12,23 +12,32 @@ class GalleryAllMainImage extends Component {
 
     this.state = {
       swipeStartX: 0,
+      swipeStartY: 0,
     };
   }
 
   handleTouchStart(event) {
     this.setState({
       swipeStartX: event.changedTouches[0].pageX,
+      swipeStartY: event.changedTouches[0].pageY,
     });
   }
 
   handleTouchEnd(event) {
-    const { swipeStartX } = this.state;
+    const { swipeStartX, swipeStartY } = this.state;
     const { nextPhoto, prevPhoto } = this.props;
     const distanceX = event.changedTouches[0].pageX - swipeStartX;
+    const distanceY = event.changedTouches[0].pageY - swipeStartY;
 
-    if (distanceX > swipeThreshold) {
+    if (
+      distanceX > swipeThreshold &&
+      Math.abs(distanceY - swipeStartY <= 100)
+    ) {
       prevPhoto();
-    } else if (distanceX < -swipeThreshold) {
+    } else if (
+      distanceX < -swipeThreshold &&
+      Math.abs(distanceY - swipeStartY <= 100)
+    ) {
       nextPhoto();
     }
   }
