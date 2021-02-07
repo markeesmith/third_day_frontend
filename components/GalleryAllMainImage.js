@@ -29,7 +29,7 @@ class GalleryAllMainImage extends Component {
     const { swipeStartX } = this.state;
     const distanceX = event.changedTouches[0].pageX - swipeStartX;
 
-    if (Math.abs(distanceX) > swipeThresholdX) {
+    if (Math.abs(distanceX) > swipeThresholdX / 2) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
