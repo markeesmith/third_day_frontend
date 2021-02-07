@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const swipeThreshold = 10;
+const swipeThresholdX = 50;
+const swipeThresholdY = 75;
 
 class GalleryAllMainImage extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class GalleryAllMainImage extends Component {
     const { swipeStartX } = this.state;
     const distanceX = event.changedTouches[0].pageX - swipeStartX;
 
-    if (distanceX > swipeThreshold) {
+    if (Math.abs(distanceX) > swipeThresholdX) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
@@ -41,9 +42,12 @@ class GalleryAllMainImage extends Component {
     const distanceX = event.changedTouches[0].pageX - swipeStartX;
     const distanceY = event.changedTouches[0].pageY - swipeStartY;
 
-    if (distanceX > swipeThreshold && Math.abs(distanceY <= 75)) {
+    if (distanceX > swipeThresholdX && Math.abs(distanceY) <= swipeThresholdY) {
       prevPhoto();
-    } else if (distanceX < -swipeThreshold && Math.abs(distanceY <= 75)) {
+    } else if (
+      distanceX < -swipeThresholdX &&
+      Math.abs(distanceY) <= swipeThresholdY
+    ) {
       nextPhoto();
     }
   }
