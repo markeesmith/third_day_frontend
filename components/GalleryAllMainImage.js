@@ -8,6 +8,7 @@ class GalleryAllMainImage extends Component {
     super(props);
 
     this.handleTouchStart = this.handleTouchStart.bind(this);
+    this.handleTouchMove = this.handleTouchMove.bind(this);
     this.handleTouchEnd = this.handleTouchEnd.bind(this);
 
     this.state = {
@@ -23,21 +24,26 @@ class GalleryAllMainImage extends Component {
     });
   }
 
+  handleTouchMove(event) {
+    const { swipeStartX } = this.state;
+    const distanceX = event.changedTouches[0].pageX - swipeStartX;
+
+    if (distanceX > swipeThreshold) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }
+
   handleTouchEnd(event) {
     const { swipeStartX, swipeStartY } = this.state;
     const { nextPhoto, prevPhoto } = this.props;
     const distanceX = event.changedTouches[0].pageX - swipeStartX;
     const distanceY = event.changedTouches[0].pageY - swipeStartY;
 
-    if (
-      distanceX > swipeThreshold &&
-      Math.abs(distanceY - swipeStartY <= 100)
-    ) {
+    if (distanceX > swipeThreshold && Math.abs(distanceY <= 75)) {
       prevPhoto();
-    } else if (
-      distanceX < -swipeThreshold &&
-      Math.abs(distanceY - swipeStartY <= 100)
-    ) {
+    } else if (distanceX < -swipeThreshold && Math.abs(distanceY <= 75)) {
       nextPhoto();
     }
   }
@@ -52,6 +58,7 @@ class GalleryAllMainImage extends Component {
           src={`${url}${position}-1024.jpg`}
           alt="Main Gallery"
           onTouchStart={this.handleTouchStart}
+          onTouchMove={this.handleTouchMove}
           onTouchEnd={this.handleTouchEnd}
         />
       </div>
