@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    tools {nodejs "Node 11.13.0"}
+    tools {nodejs "Node 14.15.4"}
 
     environment {
         CI = 'true'
@@ -10,13 +10,16 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+              echo 'Installing dependencies...'
               sh 'npm install'
+              echo 'Building...'
+              sh 'npm run build'
             }
         }
         stage('Test') {
             steps {
+              echo 'Running tests...'
                 // sh 'npm run test'
-                echo 'No tests added yet'
             }
         }
         stage('Deploy DEV') {
